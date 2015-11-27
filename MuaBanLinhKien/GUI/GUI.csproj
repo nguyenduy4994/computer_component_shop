@@ -39,8 +39,14 @@
     <Reference Include="DevExpress.XtraBars.v14.2" />
     <Reference Include="DevExpress.Sparkline.v14.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v14.2" />
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,16 +57,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmHangHoaDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmHangHoaDanhMuc.Designer.cs">
+      <DependentUpon>FrmHangHoaDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.Designer.cs">
+      <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\FrmNhanVien_DanhSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\FrmNhanVien_DanhSach.Designer.cs">
+      <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.Designer.cs">
+      <DependentUpon>FrmNhanVien_PhanQuyen_DanhSach.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\KhoHang\FrmHangHoaDanhMuc.resx">
+      <DependentUpon>FrmHangHoaDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\KhoHang\FrmThemDanhMuc.resx">
+      <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\FrmNhanVien_DanhSach.resx">
+      <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.resx">
+      <DependentUpon>FrmNhanVien_PhanQuyen_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -81,6 +123,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaoCao\" />
+    <Folder Include="BaoHanh\BaoHanh\" />
+    <Folder Include="BaoHanh\NhanBaoHanh\" />
+    <Folder Include="HangHoa\NhaCungCap\" />
+    <Folder Include="HangHoa\NhapHang\" />
+    <Folder Include="HeThong\CauHinh\" />
+    <Folder Include="HeThong\GioiThieu\" />
+    <Folder Include="MuaBan\HoaDon\" />
+    <Folder Include="MuaBan\KhachHang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{9b59368d-7db8-454a-bf86-2e37e2f6be01}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{92ff2775-90b1-4901-a0e7-dc4831af77a6}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
