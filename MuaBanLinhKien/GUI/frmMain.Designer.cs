@@ -477,7 +477,7 @@
             this.xTabBangTin.Name = "xTabBangTin";
             this.xTabBangTin.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xTabBangTin.Size = new System.Drawing.Size(849, 312);
-            this.xTabBangTin.Text = "Bảng tin";
+            this.xTabBangTin.Text = "Thông tin hữu ích";
             // 
             // FrmMain
             // 
