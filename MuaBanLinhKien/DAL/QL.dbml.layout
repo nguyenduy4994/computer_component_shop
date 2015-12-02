@@ -170,7 +170,7 @@
         <elementListCompartment Id="d7591f73-5e34-4b50-921a-441c1fe280d6" absoluteBounds="0.76500000000000012, 7.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 8.07774983723958); (3.5 : 8.07774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.07774983723958); (3.5 : 8.07774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/QLDataContext/category/category_product" />
       <nodes>
         <classShapeMoniker Id="42dd32e1-f202-4677-b086-868583cac1c6" />

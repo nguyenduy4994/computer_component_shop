@@ -39,10 +39,26 @@
     <Reference Include="DevExpress.XtraBars.v14.2" />
     <Reference Include="DevExpress.Sparkline.v14.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v14.2" />
-    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraGrid.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraLayout.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraPrinting.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraScheduler.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraScheduler.v14.2.Core.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -69,6 +85,12 @@
     <Compile Include="HangHoa\KhoHang\FrmHangHoaDanhMuc.Designer.cs">
       <DependentUpon>FrmHangHoaDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmSuaDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmSuaDanhMuc.Designer.cs">
+      <DependentUpon>FrmSuaDanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HangHoa\KhoHang\FrmHangHoaDanhMuc.resx">
       <DependentUpon>FrmHangHoaDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\KhoHang\FrmSuaDanhMuc.resx">
+      <DependentUpon>FrmSuaDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HangHoa\KhoHang\FrmThemDanhMuc.resx">
       <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>

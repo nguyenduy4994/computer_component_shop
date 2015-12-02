@@ -33,5 +33,16 @@ namespace DAL.Properties {
                 return ((string)(this["QuanLyMuaBanLinhKienConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DUY-LAPTOP\\SQLEXPRESS;Initial Catalog=QuanLyMuaBanLinhKien;Persist Se" +
+            "curity Info=True;User ID=sa;Password=duylun@123")]
+        public string LocalConnection {
+            get {
+                return ((string)(this["LocalConnection"]));
+            }
+        }
     }
 }

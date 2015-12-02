@@ -29,6 +29,24 @@ namespace GUI.HangHoa.KhoHang
 
             // Btn event
             btnDanhMucThem.Click += btnDanhMucThem_Click;
+            btnDanhMucSua.Click += btnDanhMucSua_Click;
+            btnDanhMucXoa.Click += btnDanhMucXoa_Click;
+            btnDanhMucLamMoi.Click += btnDanhMucLamMoi_Click;
+        }
+
+        void btnDanhMucLamMoi_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void btnDanhMucXoa_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        void btnDanhMucSua_Click(object sender, EventArgs e)
+        {
+            
         }
 
         void btnDanhMucThem_Click(object sender, EventArgs e)

@@ -72,7 +72,7 @@ namespace DAL
     #endregion
 		
 		public QLDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QuanLyMuaBanLinhKienConnectionString, mappingSource)
+				base(global::DAL.Properties.Settings.Default.LocalConnection, mappingSource)
 		{
 			OnCreated();
 		}
