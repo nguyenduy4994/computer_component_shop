@@ -20,12 +20,147 @@ namespace GUI
             // Event cho tab
             tabMain.CloseButtonClick += tabMain_CloseButtonClick;
 
-            // Event cac nut lenh
-            barBtnDanhSachNhanVien.ItemClick += barBtnDanhSachNhanVien_ItemClick;
-            barBtnDanhSachQuyen.ItemClick += barBtnDanhSachQuyen_ItemClick;
+            // Event mua ban
+            barBtnLapHoaDon.ItemClick += barBtnLapHoaDon_ItemClick;
+            barBtnLapPhieuBaoGia.ItemClick += barBtnLapPhieuBaoGia_ItemClick;
+            barBtnHoaDon.ItemClick += barBtnHoaDon_ItemClick;
+            barBtnPhieuBaoGia.ItemClick += barBtnPhieuBaoGia_ItemClick;
+
+            barBtnThemKhachHang.ItemClick += barBtnThemKhachHang_ItemClick;
+            barBtnDanhSachKhachHang.ItemClick += barBtnDanhSachKhachHang_ItemClick;
 
             // Event nut kho hang
+            barBtnThemHangHoa.ItemClick += barBtnThemHangHoa_ItemClick;
             barBtnDanhMucHangHoa.ItemClick += barBtnDanhMucHangHoa_ItemClick;
+
+            barBtnNhapHang.ItemClick += barBtnNhapHang_ItemClick;
+            barBtnPhieuNhapHang.ItemClick += barBtnPhieuNhapHang_ItemClick;
+
+            barBtnThemNhaCungCap.ItemClick += barBtnThemNhaCungCap_ItemClick;
+            barBtnDanhSachNhaCungCap.ItemClick += barBtnDanhSachNhaCungCap_ItemClick;
+
+            // Event bao hanh
+            barBtnLapPhieuNhapBaoHanh.ItemClick += barBtnLapPhieuNhapBaoHanh_ItemClick;
+            barBtnCacPhieuBaoHanh.ItemClick += barBtnCacPhieuBaoHanh_ItemClick;
+
+            barBtnKiemTraPhieuBaoHanh.ItemClick += barBtnKiemTraPhieuBaoHanh_ItemClick;
+            barBtnTraSanPhamBaoHanh.ItemClick += barBtnTraSanPhamBaoHanh_ItemClick;
+
+            // Event nhan vien
+            barBtnThemNhanVien.ItemClick += barBtnThemNhanVien_ItemClick;
+            barBtnDanhSachNhanVien.ItemClick += barBtnDanhSachNhanVien_ItemClick;
+            barBtnDanhSachQuyen.ItemClick += barBtnDanhSachQuyen_ItemClick;
+            barBtnPhanQuyen.ItemClick += barBtnPhanQuyen_ItemClick;
+
+            // Event he thong
+            barBtnCaiDatChung.ItemClick += barBtnCaiDatChung_ItemClick;
+            barBtnCaiDatCSDL.ItemClick += barBtnCaiDatCSDL_ItemClick;
+            barBtnGioiThieu.ItemClick += barBtnGioiThieu_ItemClick;
+            barBtnTroGiup.ItemClick += barBtnTroGiup_ItemClick;
+        }
+
+        void barBtnTroGiup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnGioiThieu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnCaiDatCSDL_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnCaiDatChung_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnThemNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnTraSanPhamBaoHanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnKiemTraPhieuBaoHanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnCacPhieuBaoHanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnLapPhieuNhapBaoHanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        void barBtnDanhSachNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnThemNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        void barBtnPhieuNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnThemHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnDanhSachKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        void barBtnThemKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+           
+        }
+
+        void barBtnPhieuBaoGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnLapPhieuBaoGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        void barBtnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
         }
 
         void barBtnDanhMucHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
