@@ -39,30 +39,31 @@
     <Reference Include="DevExpress.XtraBars.v14.2" />
     <Reference Include="DevExpress.Sparkline.v14.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v14.2" />
-    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraGrid.v14.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraLayout.v14.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraPrinting.v14.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Reporting.Extensions, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraScheduler.v14.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.XtraScheduler.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\DevExpress 14.2\Components\Bin\Framework\DevExpress.XtraScheduler.v14.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v14.2.Core, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.XtraTreeList.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,6 +72,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FrmMain.cs">
@@ -96,6 +98,24 @@
     </Compile>
     <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.Designer.cs">
       <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmDanhMuc.Designer.cs">
+      <DependentUpon>FrmDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmSuaNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmSuaNhaCungCap.Designer.cs">
+      <DependentUpon>FrmSuaNhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmThemNhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\NhaCungCap\FrmThemNhaCungCap.Designer.cs">
+      <DependentUpon>FrmThemNhaCungCap.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVien\FrmNhanVien_DanhSach.cs">
       <SubType>Form</SubType>
@@ -123,6 +143,15 @@
     <EmbeddedResource Include="HangHoa\KhoHang\FrmThemDanhMuc.resx">
       <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\NhaCungCap\FrmDanhMuc.resx">
+      <DependentUpon>FrmDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\NhaCungCap\FrmSuaNhaCungCap.resx">
+      <DependentUpon>FrmSuaNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\NhaCungCap\FrmThemNhaCungCap.resx">
+      <DependentUpon>FrmThemNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\FrmNhanVien_DanhSach.resx">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +167,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,12 +183,12 @@
     <Folder Include="BaoCao\" />
     <Folder Include="BaoHanh\BaoHanh\" />
     <Folder Include="BaoHanh\NhanBaoHanh\" />
-    <Folder Include="HangHoa\NhaCungCap\" />
     <Folder Include="HangHoa\NhapHang\" />
     <Folder Include="HeThong\CauHinh\" />
     <Folder Include="HeThong\GioiThieu\" />
     <Folder Include="MuaBan\HoaDon\" />
     <Folder Include="MuaBan\KhachHang\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj">
@@ -169,6 +199,36 @@
       <Project>{92ff2775-90b1-4901-a0e7-dc4831af77a6}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\slide10.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

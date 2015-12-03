@@ -52,7 +52,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(264, 205);
+            this.btnLuu.Location = new System.Drawing.Point(265, 200);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
             this.btnLuu.TabIndex = 15;
@@ -61,22 +61,23 @@
             // btnHuy
             // 
             this.btnHuy.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnHuy.Location = new System.Drawing.Point(345, 205);
+            this.btnHuy.Location = new System.Drawing.Point(346, 200);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(75, 23);
             this.btnHuy.TabIndex = 16;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // txtTenDanhMuc
             // 
-            this.txtTenDanhMuc.Location = new System.Drawing.Point(105, 87);
+            this.txtTenDanhMuc.Location = new System.Drawing.Point(106, 82);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(315, 20);
             this.txtTenDanhMuc.TabIndex = 11;
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 182);
+            this.labelControl4.Location = new System.Drawing.Point(13, 177);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(71, 13);
             this.labelControl4.TabIndex = 6;
@@ -84,14 +85,14 @@
             // 
             // txtMaDanhMuc
             // 
-            this.txtMaDanhMuc.Location = new System.Drawing.Point(105, 61);
+            this.txtMaDanhMuc.Location = new System.Drawing.Point(106, 56);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.Size = new System.Drawing.Size(315, 20);
             this.txtMaDanhMuc.TabIndex = 7;
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 90);
+            this.labelControl3.Location = new System.Drawing.Point(13, 85);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(71, 13);
             this.labelControl3.TabIndex = 8;
@@ -100,6 +101,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.BackColor = System.Drawing.Color.White;
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("labelControl2.Appearance.Image")));
             this.labelControl2.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelControl2.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
@@ -114,7 +116,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 64);
+            this.labelControl1.Location = new System.Drawing.Point(13, 59);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(67, 13);
             this.labelControl1.TabIndex = 9;
@@ -122,7 +124,7 @@
             // 
             // lkDanhMucCha
             // 
-            this.lkDanhMucCha.Location = new System.Drawing.Point(105, 179);
+            this.lkDanhMucCha.Location = new System.Drawing.Point(106, 174);
             this.lkDanhMucCha.Name = "lkDanhMucCha";
             this.lkDanhMucCha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -156,14 +158,15 @@
             // btnNull
             // 
             this.btnNull.Image = ((System.Drawing.Image)(resources.GetObject("btnNull.Image")));
-            this.btnNull.Location = new System.Drawing.Point(394, 177);
+            this.btnNull.Location = new System.Drawing.Point(395, 172);
             this.btnNull.Name = "btnNull";
             this.btnNull.Size = new System.Drawing.Size(24, 24);
             this.btnNull.TabIndex = 17;
+            this.btnNull.Click += new System.EventHandler(this.btnNull_Click);
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 116);
+            this.labelControl5.Location = new System.Drawing.Point(13, 111);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(31, 13);
             this.labelControl5.TabIndex = 10;
@@ -171,7 +174,7 @@
             // 
             // txtMoTa
             // 
-            this.txtMoTa.Location = new System.Drawing.Point(105, 113);
+            this.txtMoTa.Location = new System.Drawing.Point(106, 108);
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(315, 60);
             this.txtMoTa.TabIndex = 13;
@@ -180,7 +183,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 232);
+            this.ClientSize = new System.Drawing.Size(433, 230);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.txtTenDanhMuc);

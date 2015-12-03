@@ -75,9 +75,14 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.tabMain = new DevExpress.XtraTab.XtraTabControl();
             this.xTabBangTin = new DevExpress.XtraTab.XtraTabPage();
+            this.ImgSlide = new DevExpress.XtraEditors.Controls.ImageSlider();
+            this.barTxtDangNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.barTxtDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).BeginInit();
             this.tabMain.SuspendLayout();
+            this.xTabBangTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImgSlide)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -109,9 +114,11 @@
             this.barBtnTroGiup,
             this.barBtnThemNhaCungCap,
             this.barBtnDanhSachNhaCungCap,
-            this.barTxtNhanVien});
+            this.barTxtNhanVien,
+            this.barTxtDangNhap,
+            this.barTxtDoiMatKhau});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 27;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -455,6 +462,8 @@
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barTxtNhanVien);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barTxtDangNhap);
+            this.ribbonStatusBar1.ItemLinks.Add(this.barTxtDoiMatKhau);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 484);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -474,10 +483,41 @@
             // 
             // xTabBangTin
             // 
+            this.xTabBangTin.Controls.Add(this.ImgSlide);
             this.xTabBangTin.Name = "xTabBangTin";
             this.xTabBangTin.ShowCloseButton = DevExpress.Utils.DefaultBoolean.False;
             this.xTabBangTin.Size = new System.Drawing.Size(849, 312);
-            this.xTabBangTin.Text = "Hiền Trang xinh đẹp";
+            this.xTabBangTin.Text = "Truy cập nhanh";
+            // 
+            // ImgSlide
+            // 
+            this.ImgSlide.AnimationTime = 1200;
+            this.ImgSlide.CurrentImageIndex = -1;
+            this.ImgSlide.LayoutMode = DevExpress.Utils.Drawing.ImageLayoutMode.MiddleCenter;
+            this.ImgSlide.Location = new System.Drawing.Point(405, 15);
+            this.ImgSlide.Name = "ImgSlide";
+            this.ImgSlide.Size = new System.Drawing.Size(437, 281);
+            this.ImgSlide.TabIndex = 0;
+            this.ImgSlide.Text = "imageSlider1";
+            this.ImgSlide.UseDisabledStatePainter = true;
+            // 
+            // barTxtDangNhap
+            // 
+            this.barTxtDangNhap.Caption = "Đăng nhập";
+            this.barTxtDangNhap.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barTxtDangNhap.Glyph = ((System.Drawing.Image)(resources.GetObject("barTxtDangNhap.Glyph")));
+            this.barTxtDangNhap.Id = 27;
+            this.barTxtDangNhap.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barTxtDangNhap.LargeGlyph")));
+            this.barTxtDangNhap.Name = "barTxtDangNhap";
+            // 
+            // barTxtDoiMatKhau
+            // 
+            this.barTxtDoiMatKhau.Caption = "Đổi mật khẩu";
+            this.barTxtDoiMatKhau.CategoryGuid = new System.Guid("6ffddb2b-9015-4d97-a4c1-91613e0ef537");
+            this.barTxtDoiMatKhau.Glyph = ((System.Drawing.Image)(resources.GetObject("barTxtDoiMatKhau.Glyph")));
+            this.barTxtDoiMatKhau.Id = 28;
+            this.barTxtDoiMatKhau.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barTxtDoiMatKhau.LargeGlyph")));
+            this.barTxtDoiMatKhau.Name = "barTxtDoiMatKhau";
             // 
             // FrmMain
             // 
@@ -496,6 +536,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMain)).EndInit();
             this.tabMain.ResumeLayout(false);
+            this.xTabBangTin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ImgSlide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,6 +591,9 @@
         private DevExpress.XtraBars.BarStaticItem barTxtNhanVien;
         private DevExpress.XtraTab.XtraTabControl tabMain;
         private DevExpress.XtraTab.XtraTabPage xTabBangTin;
+        private DevExpress.XtraEditors.Controls.ImageSlider ImgSlide;
+        private DevExpress.XtraBars.BarButtonItem barTxtDangNhap;
+        private DevExpress.XtraBars.BarButtonItem barTxtDoiMatKhau;
     }
 }
 

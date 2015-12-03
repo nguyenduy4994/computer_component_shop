@@ -37,6 +37,21 @@ namespace BUS
             try
             {
                 db.categories.InsertOnSubmit(pCat);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Update(category pCat)
+        {
+            try
+            {
+                pCat.modified = DateTime.Now;
+                db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
@@ -54,6 +69,19 @@ namespace BUS
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+        public bool Delete(category pCat)
+        {
+            try
+            {
+                db.categories.DeleteOnSubmit(pCat);
+                db.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

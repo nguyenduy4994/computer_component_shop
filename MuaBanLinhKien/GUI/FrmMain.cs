@@ -57,6 +57,25 @@ namespace GUI
             barBtnCaiDatCSDL.ItemClick += barBtnCaiDatCSDL_ItemClick;
             barBtnGioiThieu.ItemClick += barBtnGioiThieu_ItemClick;
             barBtnTroGiup.ItemClick += barBtnTroGiup_ItemClick;
+
+            //Load
+            this.Load += FrmMain_Load;
+        }
+
+        void FrmMain_Load(object sender, EventArgs e)
+        {
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide1);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide2);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide3);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide4);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide5);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide6);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide7);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide8);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide9);
+            ImgSlide.Images.Add(GUI.Properties.Resources.slide10);
+
+            
         }
 
         void barBtnTroGiup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -111,7 +130,8 @@ namespace GUI
 
         void barBtnDanhSachNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            HangHoa.NhaCungCap.FrmDanhMuc frm = new HangHoa.NhaCungCap.FrmDanhMuc();
+            OpenTab(frm);
         }
 
         void barBtnThemNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

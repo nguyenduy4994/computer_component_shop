@@ -30,7 +30,7 @@ namespace BUS
                 //var hh = from h in db.products
                 //         where h.cat_id == pCat.cat_id
                 //         select h;
-
+                //Gì đây hả???
                 var hh = from h in pCat.products
                          select h;
 
