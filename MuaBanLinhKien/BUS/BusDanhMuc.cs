@@ -75,13 +75,19 @@ namespace BUS
         {
             try
             {
+                product pro = db.products.Where(p => p.cat_id == pCat.cat_id).FirstOrDefault();
+                category cat = db.categories.Where(c => c.parent_id == pCat.cat_id).FirstOrDefault();
+                if(pro != null || cat != null)
+                {
+                    return false;
+                }
                 db.categories.DeleteOnSubmit(pCat);
                 db.SubmitChanges();
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
-                return false;
+                throw ex;
             }
         }
     }

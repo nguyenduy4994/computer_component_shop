@@ -93,11 +93,23 @@
     <Compile Include="HangHoa\KhoHang\FrmSuaDanhMuc.Designer.cs">
       <DependentUpon>FrmSuaDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmSuaSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmSuaSanPham.Designer.cs">
+      <DependentUpon>FrmSuaSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="HangHoa\KhoHang\FrmThemDanhMuc.Designer.cs">
       <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmThemSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\KhoHang\FrmThemSanPham.Designer.cs">
+      <DependentUpon>FrmThemSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="HangHoa\NhaCungCap\FrmDanhMuc.cs">
       <SubType>Form</SubType>
@@ -140,8 +152,14 @@
     <EmbeddedResource Include="HangHoa\KhoHang\FrmSuaDanhMuc.resx">
       <DependentUpon>FrmSuaDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\KhoHang\FrmSuaSanPham.resx">
+      <DependentUpon>FrmSuaSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HangHoa\KhoHang\FrmThemDanhMuc.resx">
       <DependentUpon>FrmThemDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\KhoHang\FrmThemSanPham.resx">
+      <DependentUpon>FrmThemSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HangHoa\NhaCungCap\FrmDanhMuc.resx">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>

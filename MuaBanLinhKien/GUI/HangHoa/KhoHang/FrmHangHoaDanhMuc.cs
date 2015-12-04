@@ -80,6 +80,7 @@ namespace GUI.HangHoa.KhoHang
         {
             if (tlDanhMuc.FocusedNode == null) return;
             category cat = (category)tlDanhMuc.GetDataRecordByNode(tlDanhMuc.FocusedNode);
+            
             if(busDanhMuc.Delete(cat))
             {
                 XtraMessageBox.Show("Xóa danh mục thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -88,6 +89,16 @@ namespace GUI.HangHoa.KhoHang
             else
             {
                 XtraMessageBox.Show("Thông tin danh mục đang được sử dụng!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                
+            }
+        }
+
+        private void btnThemSanPham_Click(object sender, EventArgs e)
+        {
+            DialogResult r = (new HangHoa.KhoHang.FrmThemSanPham()).ShowDialog();
+            if (r == DialogResult.OK)
+            {
+                btnLamMoiSanPham.PerformClick();
             }
         }
     }
