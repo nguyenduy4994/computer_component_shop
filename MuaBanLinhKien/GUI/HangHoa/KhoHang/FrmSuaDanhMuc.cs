@@ -38,6 +38,7 @@ namespace GUI.HangHoa.KhoHang
         void FrmSuaDanhMuc_Load(object sender, EventArgs e)
         {
             if (Cat == null) return;
+            lkDanhMucCha.Properties.DataSource = busDanhMuc.GetAll();
             txtMaDanhMuc.Text = Cat.cat_id;
             txtTenDanhMuc.Text = Cat.name;
             txtMoTa.Text = Cat.describe;

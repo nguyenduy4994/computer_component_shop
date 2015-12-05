@@ -99,7 +99,39 @@ namespace GUI.HangHoa.KhoHang
             if (r == DialogResult.OK)
             {
                 btnLamMoiSanPham.PerformClick();
+                XtraMessageBox.Show("Thêm sản phẩm thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void btnSuaSanPham_Click(object sender, EventArgs e)
+        {
+            if (gvHangHoa.GetFocusedRow() == null) return;
+            product pro = (product)gvHangHoa.GetFocusedRow();
+            FrmSuaSanPham frm = new FrmSuaSanPham();
+            frm.p = pro;
+            frm.ShowDialog();
+            DialogResult d = frm.DialogResult;
+            if(d == DialogResult.OK)
+            {
+                btnDanhMucLamMoi.PerformClick();
+                XtraMessageBox.Show("Sửa sản phẩm thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnXoaSanPham_Click(object sender, EventArgs e)
+        {
+            if (gvHangHoa.GetFocusedRow() == null) return;
+            product pro = (product)gvHangHoa.GetFocusedRow();
+            if (busHangHoa.Delete(pro))
+            {
+                btnDanhMucLamMoi.PerformClick();
+                XtraMessageBox.Show("Xóa sản phẩm thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
+        }
+
+        private void btnLamMoiSanPham_Click(object sender, EventArgs e)
+        {
+            dgvHangHoa.Refresh();
         }
     }
 }

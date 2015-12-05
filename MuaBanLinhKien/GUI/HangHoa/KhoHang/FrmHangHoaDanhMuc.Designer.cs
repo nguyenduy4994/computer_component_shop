@@ -278,6 +278,7 @@
             this.btnXoaSanPham.Name = "btnXoaSanPham";
             this.btnXoaSanPham.Size = new System.Drawing.Size(24, 24);
             this.btnXoaSanPham.TabIndex = 2;
+            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
             // 
             // btnSuaSanPham
             // 
@@ -286,6 +287,7 @@
             this.btnSuaSanPham.Name = "btnSuaSanPham";
             this.btnSuaSanPham.Size = new System.Drawing.Size(24, 24);
             this.btnSuaSanPham.TabIndex = 3;
+            this.btnSuaSanPham.Click += new System.EventHandler(this.btnSuaSanPham_Click);
             // 
             // btnLamMoiSanPham
             // 
@@ -294,6 +296,7 @@
             this.btnLamMoiSanPham.Name = "btnLamMoiSanPham";
             this.btnLamMoiSanPham.Size = new System.Drawing.Size(24, 24);
             this.btnLamMoiSanPham.TabIndex = 4;
+            this.btnLamMoiSanPham.Click += new System.EventHandler(this.btnLamMoiSanPham_Click);
             // 
             // treeListColumn1
             // 

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyMuaBanLinhKien" Class="QLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DUY-LAPTOP\SQLEXPRESS;Initial Catalog=QuanLyMuaBanLinhKien;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="LocalConnection" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HIENTRANG-PC\SQLEXPRESS;Initial Catalog=QuanLyMuaBanLinhKien;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="LocalConnection" Provider="System.Data.SqlClient" />
   <Table Name="dbo.bill" Member="bills">
     <Type Name="bill">
       <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

@@ -331,18 +331,18 @@
             this.lblEmail.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(289, 64);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(203, 19);
+            this.lblEmail.Size = new System.Drawing.Size(183, 19);
             this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "nguyenduy4994@gmail.com";
+            this.lblEmail.Text = "hientrangit94@gmail.com";
             // 
             // lblSoDienThoai
             // 
             this.lblSoDienThoai.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSoDienThoai.Location = new System.Drawing.Point(101, 63);
             this.lblSoDienThoai.Name = "lblSoDienThoai";
-            this.lblSoDienThoai.Size = new System.Drawing.Size(100, 19);
+            this.lblSoDienThoai.Size = new System.Drawing.Size(90, 19);
             this.lblSoDienThoai.TabIndex = 1;
-            this.lblSoDienThoai.Text = "0909 000 999";
+            this.lblSoDienThoai.Text = "0973812276";
             // 
             // labelControl6
             // 
@@ -365,9 +365,9 @@
             this.lblDiaChi.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiaChi.Location = new System.Drawing.Point(101, 38);
             this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(278, 19);
+            this.lblDiaChi.Size = new System.Drawing.Size(312, 19);
             this.lblDiaChi.TabIndex = 1;
-            this.lblDiaChi.Text = "47/15c KP1, F.10, Mỹ Tho - Tiền Giang";
+            this.lblDiaChi.Text = "73/7 Lê Trọng Tấn-Sơn kì-Tân Phú-TP HCM";
             // 
             // labelControl2
             // 
@@ -382,9 +382,9 @@
             this.lblTenNhaCungCap.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenNhaCungCap.Location = new System.Drawing.Point(101, 13);
             this.lblTenNhaCungCap.Name = "lblTenNhaCungCap";
-            this.lblTenNhaCungCap.Size = new System.Drawing.Size(412, 19);
+            this.lblTenNhaCungCap.Size = new System.Drawing.Size(129, 19);
             this.lblTenNhaCungCap.TabIndex = 1;
-            this.lblTenNhaCungCap.Text = "Công ty TNHH Một thành viên một vợ một con một chồng";
+            this.lblTenNhaCungCap.Text = "Công ty TNHH DT";
             // 
             // labelControl1
             // 
@@ -478,6 +478,7 @@
             this.btnThemTrai.Name = "btnThemTrai";
             this.btnThemTrai.Size = new System.Drawing.Size(24, 24);
             this.btnThemTrai.TabIndex = 1;
+            this.btnThemTrai.Click += new System.EventHandler(this.btnThemTrai_Click);
             // 
             // labelControl3
             // 
@@ -501,6 +502,7 @@
             this.lkDanhMuc.Properties.ValueMember = "name";
             this.lkDanhMuc.Size = new System.Drawing.Size(166, 24);
             this.lkDanhMuc.TabIndex = 2;
+            this.lkDanhMuc.EditValueChanged += new System.EventHandler(this.lkDanhMuc_EditValueChanged);
             // 
             // treeListLookUpEdit1TreeList
             // 
@@ -534,7 +536,7 @@
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDanhMuc";
-            this.Text = "Danh mục sản phẩm";
+            this.Text = "Danh mục nhà cung cấp";
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

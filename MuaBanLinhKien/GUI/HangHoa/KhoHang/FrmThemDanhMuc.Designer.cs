@@ -32,7 +32,7 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtMaDanhMuc = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lbTenDanhMuc = new DevExpress.XtraEditors.LabelControl();
             this.txtTenDanhMuc = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
@@ -81,13 +81,13 @@
             this.txtMaDanhMuc.Size = new System.Drawing.Size(315, 20);
             this.txtMaDanhMuc.TabIndex = 0;
             // 
-            // labelControl3
+            // lbTenDanhMuc
             // 
-            this.labelControl3.Location = new System.Drawing.Point(13, 85);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(71, 13);
-            this.labelControl3.TabIndex = 0;
-            this.labelControl3.Text = "Tên danh mục:";
+            this.lbTenDanhMuc.Location = new System.Drawing.Point(13, 85);
+            this.lbTenDanhMuc.Name = "lbTenDanhMuc";
+            this.lbTenDanhMuc.Size = new System.Drawing.Size(71, 13);
+            this.lbTenDanhMuc.TabIndex = 0;
+            this.lbTenDanhMuc.Text = "Tên danh mục:";
             // 
             // txtTenDanhMuc
             // 
@@ -194,7 +194,7 @@
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.txtMaDanhMuc);
-            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.lbTenDanhMuc);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.lkDanhMucCha);
@@ -216,7 +216,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtMaDanhMuc;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lbTenDanhMuc;
         private DevExpress.XtraEditors.TextEdit txtTenDanhMuc;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.SimpleButton btnHuy;

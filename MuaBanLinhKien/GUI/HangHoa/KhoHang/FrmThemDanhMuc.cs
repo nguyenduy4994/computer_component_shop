@@ -36,7 +36,7 @@ namespace GUI.HangHoa.KhoHang
         {
             if (txtTenDanhMuc.Text == string.Empty)
             {
-                XtraMessageBox.Show("Mã danh mục không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                XtraMessageBox.Show(lbTenDanhMuc.Text + "không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 txtTenDanhMuc.Focus();
                 return;
             }

@@ -129,6 +129,12 @@
     <Compile Include="HangHoa\NhaCungCap\FrmThemNhaCungCap.Designer.cs">
       <DependentUpon>FrmThemNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="HangHoa\NhapHang\FrmDanhMuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HangHoa\NhapHang\FrmDanhMuc.Designer.cs">
+      <DependentUpon>FrmDanhMuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\FrmNhanVien_DanhSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     <EmbeddedResource Include="HangHoa\NhaCungCap\FrmThemNhaCungCap.resx">
       <DependentUpon>FrmThemNhaCungCap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HangHoa\NhapHang\FrmDanhMuc.resx">
+      <DependentUpon>FrmDanhMuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\FrmNhanVien_DanhSach.resx">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,7 +210,6 @@
     <Folder Include="BaoCao\" />
     <Folder Include="BaoHanh\BaoHanh\" />
     <Folder Include="BaoHanh\NhanBaoHanh\" />
-    <Folder Include="HangHoa\NhapHang\" />
     <Folder Include="HeThong\CauHinh\" />
     <Folder Include="HeThong\GioiThieu\" />
     <Folder Include="MuaBan\HoaDon\" />

@@ -39,6 +39,9 @@ namespace GUI
             barBtnThemNhaCungCap.ItemClick += barBtnThemNhaCungCap_ItemClick;
             barBtnDanhSachNhaCungCap.ItemClick += barBtnDanhSachNhaCungCap_ItemClick;
 
+            barBtnPhieuNhapHang.ItemClick += barBtnPhieuNhapHang_ItemClick;
+            barBtnNhapHang.ItemClick +=barBtnNhapHang_ItemClick;
+
             // Event bao hanh
             barBtnLapPhieuNhapBaoHanh.ItemClick += barBtnLapPhieuNhapBaoHanh_ItemClick;
             barBtnCacPhieuBaoHanh.ItemClick += barBtnCacPhieuBaoHanh_ItemClick;
@@ -141,7 +144,8 @@ namespace GUI
 
         void barBtnPhieuNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            HangHoa.NhapHang.FrmDanhMuc frm = new HangHoa.NhapHang.FrmDanhMuc();
+            OpenTab(frm);
         }
 
         void barBtnNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

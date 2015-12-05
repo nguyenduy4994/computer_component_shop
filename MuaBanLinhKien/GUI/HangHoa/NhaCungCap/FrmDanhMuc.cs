@@ -40,6 +40,7 @@ namespace GUI.HangHoa.NhaCungCap
         {
             dgvNhaCungCap.DataSource = busNhaCungCap.GetAll();
             lkDanhMuc.Properties.DataSource = busDanhMuc.GetAll();
+            dgvSanPham.DataSource = busHangHoa.GetAll();
         }
 
         private void btnDanhMucThem_Click(object sender, System.EventArgs e)
@@ -75,6 +76,19 @@ namespace GUI.HangHoa.NhaCungCap
             if (gvNhaCungCap.SelectedRowsCount != 1) return;
 
 
+        }
+        private void lkDanhMuc_EditValueChanged(object sender, System.EventArgs e)
+        {
+            if (lkDanhMuc.EditValue == null) return;
+            category cat = (category)lkDanhMuc.GetSelectedDataRow();
+            dgvSanPham.DataSource = busHangHoa.GetByCat(cat);
+        }
+
+        private void btnThemTrai_Click(object sender, System.EventArgs e)
+        {
+            product sp = (product)gvSanPham.GetFocusedRow();
+            provider ncc = (provider)gvNhaCungCap.GetFocusedRow();
+            
         }
     }
 }
