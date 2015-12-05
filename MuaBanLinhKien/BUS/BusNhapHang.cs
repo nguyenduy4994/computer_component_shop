@@ -34,6 +34,7 @@ namespace BUS
         {
             try
             {
+                pReceipt.created = DateTime.Now;
                 db.receipts.InsertOnSubmit(pReceipt);
                 db.SubmitChanges();
                 return true;

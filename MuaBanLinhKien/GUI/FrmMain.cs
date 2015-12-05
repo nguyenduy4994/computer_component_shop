@@ -160,7 +160,8 @@ namespace GUI
 
         void barBtnDanhSachKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            MuaBan.KhachHang.FrmDanhMucKhachHang frm = new MuaBan.KhachHang.FrmDanhMucKhachHang();
+            OpenTab(frm);
         }
 
         void barBtnThemKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
