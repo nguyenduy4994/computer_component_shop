@@ -135,6 +135,12 @@
     <Compile Include="HangHoa\NhapHang\FrmDanhMuc.Designer.cs">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="MuaBan\KhachHang\FrmDanhMucKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaBan\KhachHang\FrmDanhMucKhachHang.Designer.cs">
+      <DependentUpon>FrmDanhMucKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\FrmNhanVien_DanhSach.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     <EmbeddedResource Include="HangHoa\NhapHang\FrmDanhMuc.resx">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MuaBan\KhachHang\FrmDanhMucKhachHang.resx">
+      <DependentUpon>FrmDanhMucKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\FrmNhanVien_DanhSach.resx">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,7 +222,6 @@
     <Folder Include="HeThong\CauHinh\" />
     <Folder Include="HeThong\GioiThieu\" />
     <Folder Include="MuaBan\HoaDon\" />
-    <Folder Include="MuaBan\KhachHang\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>

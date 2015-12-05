@@ -39,9 +39,6 @@ namespace DAL
     partial void Insertbill_detail(bill_detail instance);
     partial void Updatebill_detail(bill_detail instance);
     partial void Deletebill_detail(bill_detail instance);
-    partial void Insertcustomer(customer instance);
-    partial void Updatecustomer(customer instance);
-    partial void Deletecustomer(customer instance);
     partial void Insertpermission(permission instance);
     partial void Updatepermission(permission instance);
     partial void Deletepermission(permission instance);
@@ -69,6 +66,9 @@ namespace DAL
     partial void Insertcategory(category instance);
     partial void Updatecategory(category instance);
     partial void Deletecategory(category instance);
+    partial void Insertcustomer(customer instance);
+    partial void Updatecustomer(customer instance);
+    partial void Deletecustomer(customer instance);
     #endregion
 		
 		public QLDataContext() : 
@@ -122,14 +122,6 @@ namespace DAL
 			get
 			{
 				return this.GetTable<bill_detail>();
-			}
-		}
-		
-		public System.Data.Linq.Table<customer> customers
-		{
-			get
-			{
-				return this.GetTable<customer>();
 			}
 		}
 		
@@ -212,6 +204,14 @@ namespace DAL
 				return this.GetTable<category>();
 			}
 		}
+		
+		public System.Data.Linq.Table<customer> customers
+		{
+			get
+			{
+				return this.GetTable<customer>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bill")]
@@ -236,6 +236,8 @@ namespace DAL
 		
 		private EntitySet<bill_detail> _bill_details;
 		
+		private EntityRef<customer> _customer;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -259,6 +261,7 @@ namespace DAL
 		public bill()
 		{
 			this._bill_details = new EntitySet<bill_detail>(new Action<bill_detail>(this.attach_bill_details), new Action<bill_detail>(this.detach_bill_details));
+			this._customer = default(EntityRef<customer>);
 			OnCreated();
 		}
 		
@@ -293,6 +296,10 @@ namespace DAL
 			{
 				if ((this._customer_id != value))
 				{
+					if (this._customer.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.Oncustomer_idChanging(value);
 					this.SendPropertyChanging();
 					this._customer_id = value;
@@ -412,6 +419,40 @@ namespace DAL
 			set
 			{
 				this._bill_details.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_bill", Storage="_customer", ThisKey="customer_id", OtherKey="id", IsForeignKey=true)]
+		public customer customer
+		{
+			get
+			{
+				return this._customer.Entity;
+			}
+			set
+			{
+				customer previousValue = this._customer.Entity;
+				if (((previousValue != value) 
+							|| (this._customer.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._customer.Entity = null;
+						previousValue.bills.Remove(this);
+					}
+					this._customer.Entity = value;
+					if ((value != null))
+					{
+						value.bills.Add(this);
+						this._customer_id = value.id;
+					}
+					else
+					{
+						this._customer_id = default(string);
+					}
+					this.SendPropertyChanged("customer");
+				}
 			}
 		}
 		
@@ -1095,212 +1136,6 @@ namespace DAL
 						this._product_id = default(string);
 					}
 					this.SendPropertyChanged("product");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.customer")]
-	public partial class customer : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id;
-		
-		private string _name;
-		
-		private string _address;
-		
-		private string _phone;
-		
-		private System.DateTime _created;
-		
-		private System.Nullable<System.DateTime> _modified;
-		
-		private bool _trash;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(string value);
-    partial void OnidChanged();
-    partial void OnnameChanging(string value);
-    partial void OnnameChanged();
-    partial void OnaddressChanging(string value);
-    partial void OnaddressChanged();
-    partial void OnphoneChanging(string value);
-    partial void OnphoneChanged();
-    partial void OncreatedChanging(System.DateTime value);
-    partial void OncreatedChanged();
-    partial void OnmodifiedChanging(System.Nullable<System.DateTime> value);
-    partial void OnmodifiedChanged();
-    partial void OntrashChanging(bool value);
-    partial void OntrashChanged();
-    #endregion
-		
-		public customer()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this.OnnameChanging(value);
-					this.SendPropertyChanging();
-					this._name = value;
-					this.SendPropertyChanged("name");
-					this.OnnameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
-		public string address
-		{
-			get
-			{
-				return this._address;
-			}
-			set
-			{
-				if ((this._address != value))
-				{
-					this.OnaddressChanging(value);
-					this.SendPropertyChanging();
-					this._address = value;
-					this.SendPropertyChanged("address");
-					this.OnaddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
-		public string phone
-		{
-			get
-			{
-				return this._phone;
-			}
-			set
-			{
-				if ((this._phone != value))
-				{
-					this.OnphoneChanging(value);
-					this.SendPropertyChanging();
-					this._phone = value;
-					this.SendPropertyChanged("phone");
-					this.OnphoneChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
-		public System.DateTime created
-		{
-			get
-			{
-				return this._created;
-			}
-			set
-			{
-				if ((this._created != value))
-				{
-					this.OncreatedChanging(value);
-					this.SendPropertyChanging();
-					this._created = value;
-					this.SendPropertyChanged("created");
-					this.OncreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified", DbType="DateTime")]
-		public System.Nullable<System.DateTime> modified
-		{
-			get
-			{
-				return this._modified;
-			}
-			set
-			{
-				if ((this._modified != value))
-				{
-					this.OnmodifiedChanging(value);
-					this.SendPropertyChanging();
-					this._modified = value;
-					this.SendPropertyChanged("modified");
-					this.OnmodifiedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trash", DbType="Bit NOT NULL")]
-		public bool trash
-		{
-			get
-			{
-				return this._trash;
-			}
-			set
-			{
-				if ((this._trash != value))
-				{
-					this.OntrashChanging(value);
-					this.SendPropertyChanging();
-					this._trash = value;
-					this.SendPropertyChanged("trash");
-					this.OntrashChanged();
 				}
 			}
 		}
@@ -4170,6 +4005,240 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.category1 = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.customer")]
+	public partial class customer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _id;
+		
+		private string _name;
+		
+		private string _address;
+		
+		private string _phone;
+		
+		private System.DateTime _created;
+		
+		private System.Nullable<System.DateTime> _modified;
+		
+		private bool _trash;
+		
+		private EntitySet<bill> _bills;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(string value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void OncreatedChanging(System.DateTime value);
+    partial void OncreatedChanged();
+    partial void OnmodifiedChanging(System.Nullable<System.DateTime> value);
+    partial void OnmodifiedChanged();
+    partial void OntrashChanging(bool value);
+    partial void OntrashChanged();
+    #endregion
+		
+		public customer()
+		{
+			this._bills = new EntitySet<bill>(new Action<bill>(this.attach_bills), new Action<bill>(this.detach_bills));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NVarChar(250) NOT NULL", CanBeNull=false)]
+		public string address
+		{
+			get
+			{
+				return this._address;
+			}
+			set
+			{
+				if ((this._address != value))
+				{
+					this.OnaddressChanging(value);
+					this.SendPropertyChanging();
+					this._address = value;
+					this.SendPropertyChanged("address");
+					this.OnaddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_phone", DbType="NVarChar(20) NOT NULL", CanBeNull=false)]
+		public string phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
+		public System.DateTime created
+		{
+			get
+			{
+				return this._created;
+			}
+			set
+			{
+				if ((this._created != value))
+				{
+					this.OncreatedChanging(value);
+					this.SendPropertyChanging();
+					this._created = value;
+					this.SendPropertyChanged("created");
+					this.OncreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modified
+		{
+			get
+			{
+				return this._modified;
+			}
+			set
+			{
+				if ((this._modified != value))
+				{
+					this.OnmodifiedChanging(value);
+					this.SendPropertyChanging();
+					this._modified = value;
+					this.SendPropertyChanged("modified");
+					this.OnmodifiedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trash", DbType="Bit NOT NULL")]
+		public bool trash
+		{
+			get
+			{
+				return this._trash;
+			}
+			set
+			{
+				if ((this._trash != value))
+				{
+					this.OntrashChanging(value);
+					this.SendPropertyChanging();
+					this._trash = value;
+					this.SendPropertyChanged("trash");
+					this.OntrashChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="customer_bill", Storage="_bills", ThisKey="id", OtherKey="customer_id")]
+		public EntitySet<bill> bills
+		{
+			get
+			{
+				return this._bills;
+			}
+			set
+			{
+				this._bills.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_bills(bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = this;
+		}
+		
+		private void detach_bills(bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.customer = null;
 		}
 	}
 }
