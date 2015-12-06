@@ -36,6 +36,7 @@ namespace BUS
         {
             try
             {
+                pCat.created = DateTime.Now;
                 db.categories.InsertOnSubmit(pCat);
                 db.SubmitChanges();
             }

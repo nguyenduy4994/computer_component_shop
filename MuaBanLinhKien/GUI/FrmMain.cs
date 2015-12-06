@@ -176,7 +176,8 @@ namespace GUI
 
         void barBtnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            MuaBan.HoaDon.FrmDanhMucHoaDon frm = new MuaBan.HoaDon.FrmDanhMucHoaDon();
+            OpenTab(frm);
         }
 
         void barBtnLapPhieuBaoGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
