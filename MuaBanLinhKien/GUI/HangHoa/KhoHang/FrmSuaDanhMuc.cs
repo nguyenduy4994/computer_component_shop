@@ -38,10 +38,12 @@ namespace GUI.HangHoa.KhoHang
         void FrmSuaDanhMuc_Load(object sender, EventArgs e)
         {
             if (Cat == null) return;
-            txtMaDanhMuc.Text = Cat.cat_id;
-            txtTenDanhMuc.Text = Cat.name;
-            txtMoTa.Text = Cat.describe;
-            lkDanhMucCha.EditValue = Cat.category1;
+            //txtMaDanhMuc.Text = Cat.cat_id;
+            //txtTenDanhMuc.Text = Cat.name;
+            //txtMoTa.Text = Cat.describe;
+            //lkDanhMucCha.EditValue = Cat.category1;
+            lkDanhMucCha.Properties.DataSource = busDanhMuc.GetAll();
+            categoryBindingSource.DataSource = Cat;
         }
 
         void btnLuu_Click(object sender, EventArgs e)

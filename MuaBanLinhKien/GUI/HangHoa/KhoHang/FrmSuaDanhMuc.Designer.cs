@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSuaDanhMuc));
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
@@ -43,11 +44,13 @@
             this.btnNull = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtMoTa = new DevExpress.XtraEditors.MemoEdit();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDanhMuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDanhMuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkDanhMucCha.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMoTa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLuu
@@ -69,6 +72,7 @@
             // 
             // txtTenDanhMuc
             // 
+            this.txtTenDanhMuc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoryBindingSource, "name", true));
             this.txtTenDanhMuc.Location = new System.Drawing.Point(105, 87);
             this.txtTenDanhMuc.Name = "txtTenDanhMuc";
             this.txtTenDanhMuc.Size = new System.Drawing.Size(315, 20);
@@ -84,6 +88,7 @@
             // 
             // txtMaDanhMuc
             // 
+            this.txtMaDanhMuc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoryBindingSource, "cat_id", true));
             this.txtMaDanhMuc.Location = new System.Drawing.Point(105, 61);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.Size = new System.Drawing.Size(315, 20);
@@ -122,6 +127,7 @@
             // 
             // lkDanhMucCha
             // 
+            this.lkDanhMucCha.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoryBindingSource, "category1", true));
             this.lkDanhMucCha.Location = new System.Drawing.Point(105, 179);
             this.lkDanhMucCha.Name = "lkDanhMucCha";
             this.lkDanhMucCha.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -171,10 +177,15 @@
             // 
             // txtMoTa
             // 
+            this.txtMoTa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoryBindingSource, "describe", true));
             this.txtMoTa.Location = new System.Drawing.Point(105, 113);
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(315, 60);
             this.txtMoTa.TabIndex = 13;
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(DAL.category);
             // 
             // FrmSuaDanhMuc
             // 
@@ -200,6 +211,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lkDanhMucCha.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMoTa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,6 +233,7 @@
         private DevExpress.XtraEditors.SimpleButton btnNull;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.MemoEdit txtMoTa;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
 
     }
 }

@@ -46,7 +46,9 @@ namespace GUI.HangHoa.KhoHang
 
         void btnDanhMucSua_Click(object sender, EventArgs e)
         {
-            
+            FrmSuaDanhMuc frm = new FrmSuaDanhMuc();
+            frm.Cat = (category)tlDanhMuc.GetDataRecordByNode(tlDanhMuc.FocusedNode);
+            frm.ShowDialog();
         }
 
         void btnDanhMucThem_Click(object sender, EventArgs e)
