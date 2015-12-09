@@ -38,12 +38,11 @@ namespace GUI.HangHoa.KhoHang
         void FrmSuaDanhMuc_Load(object sender, EventArgs e)
         {
             if (Cat == null) return;
-            //txtMaDanhMuc.Text = Cat.cat_id;
-            //txtTenDanhMuc.Text = Cat.name;
-            //txtMoTa.Text = Cat.describe;
-            //lkDanhMucCha.EditValue = Cat.category1;
             lkDanhMucCha.Properties.DataSource = busDanhMuc.GetAll();
-            categoryBindingSource.DataSource = Cat;
+            txtMaDanhMuc.Text = Cat.cat_id;
+            txtTenDanhMuc.Text = Cat.name;
+            txtMoTa.Text = Cat.describe;
+            lkDanhMucCha.EditValue = Cat.category1;//chỗ này
         }
 
         void btnLuu_Click(object sender, EventArgs e)
@@ -55,7 +54,32 @@ namespace GUI.HangHoa.KhoHang
                 return;
             }
 
-            
+            Cat.name = txtTenDanhMuc.Text;
+            Cat.describe = txtTenDanhMuc.Text;
+            Cat.category1 = (category)lkDanhMucCha.EditValue;
+
+            if (busDanhMuc.Update(Cat))
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            else
+            {
+                XtraMessageBox.Show("Có lỗi trong quá trình cập nhật", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                DialogResult = DialogResult.Cancel;
+                this.Close();
+            }
+        }
+
+        private void btnNull_Click(object sender, EventArgs e)
+        {
+            lkDanhMucCha.EditValue = null;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

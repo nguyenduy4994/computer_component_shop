@@ -25,9 +25,6 @@ namespace GUI.HangHoa.KhoHang
 
             // Form event
             this.Load += FrmThemDanhMuc_Load;
-
-            // Event button
-            btnLuu.Click += btnLuu_Click;
         }
 
         void FrmThemDanhMuc_Load(object sender, EventArgs e)
@@ -39,7 +36,7 @@ namespace GUI.HangHoa.KhoHang
         {
             if (txtTenDanhMuc.Text == string.Empty)
             {
-                XtraMessageBox.Show("Mã danh mục không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                XtraMessageBox.Show(lbTenDanhMuc.Text + "không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 txtTenDanhMuc.Focus();
                 return;
             }
@@ -48,7 +45,7 @@ namespace GUI.HangHoa.KhoHang
             cat.cat_id = txtMaDanhMuc.Text;
             cat.name = txtTenDanhMuc.Text;
             cat.describe = txtMoTa.Text;
-            cat.created = DateTime.Today;
+            cat.created = DateTime.Now;
 
             if(lkDanhMucCha.GetSelectedDataRow() != null)
             {
@@ -70,6 +67,17 @@ namespace GUI.HangHoa.KhoHang
             {
                 XtraMessageBox.Show("Thêm danh mục thất bại, vui lòng thử lại", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void btnNull_Click(object sender, EventArgs e)
+        {
+            lkDanhMucCha.EditValue = null;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

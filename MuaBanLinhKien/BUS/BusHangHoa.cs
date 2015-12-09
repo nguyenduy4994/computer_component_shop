@@ -22,21 +22,66 @@ namespace BUS
         /**
          * Lấy sản phẩm theo danh mục
          */
+        public object GetAll()
+        {
+            try
+            {
+                var hh = from h in db.products
+                         select h;
+                return hh;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
         public object GetByCat(category pCat)
         {
             try
             {
-                // Dưới đây là đoạn select của Trang
-                //var hh = from h in db.products
-                //         where h.cat_id == pCat.cat_id
-                //         select h;
-
                 var hh = from h in pCat.products
                          select h;
-
                 return hh;
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Update(product pProduct)
+        {
+            try
+            {
+                pProduct.modified = DateTime.Now;
+                db.SubmitChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Save()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Delete(product pProduct)
+        {
+            try
+            {
+                db.products.DeleteOnSubmit(pProduct);
+                db.SubmitChanges();
+                return true;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

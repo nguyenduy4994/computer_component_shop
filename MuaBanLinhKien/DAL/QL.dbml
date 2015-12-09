@@ -1,17 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QuanLyMuaBanLinhKien" Class="QLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DUY-LAPTOP\SQLEXPRESS;Initial Catalog=QuanLyMuaBanLinhKien;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="LocalConnection" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.bill" Member="bills">
-    <Type Name="bill">
-      <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="customer_id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="staff_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
-      <Column Name="type" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
-      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="bill_bill_detail" Member="bill_details" ThisKey="id" OtherKey="bill_id" Type="bill_detail" />
-    </Type>
-  </Table>
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HIENTRANG-PC\SQLEXPRESS;Initial Catalog=QuanLyMuaBanLinhKien;Persist Security Info=True;User ID=sa" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="LocalConnection" Provider="System.Data.SqlClient" />
   <Table Name="dbo.warranty_detail" Member="warranty_details">
     <Type Name="warranty_detail">
       <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
@@ -38,19 +26,8 @@
       <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="bill_bill_detail" Member="bill" ThisKey="bill_id" OtherKey="id" Type="bill" IsForeignKey="true" />
       <Association Name="product_bill_detail" Member="product" ThisKey="product_id" OtherKey="id" Type="product" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.customer" Member="customers">
-    <Type Name="customer">
-      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="address" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="bill_bill_detail" Member="bill" ThisKey="bill_id" OtherKey="id" Type="bill" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.permission" Member="permissions">
@@ -95,20 +72,8 @@
       <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="provider_provider_product" Member="provider_products" ThisKey="id" OtherKey="provider_id" Type="provider_product" />
       <Association Name="provider_receipt" Member="receipts" ThisKey="id" OtherKey="provider_id" Type="receipt" />
-    </Type>
-  </Table>
-  <Table Name="dbo.provider_product" Member="provider_products">
-    <Type Name="provider_product">
-      <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="product_id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="provider_id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="product_provider_product" Member="product" ThisKey="product_id" OtherKey="id" Type="product" IsForeignKey="true" />
-      <Association Name="provider_provider_product" Member="provider" ThisKey="provider_id" OtherKey="id" Type="provider" IsForeignKey="true" />
+      <Association Name="provider_provider_product" Member="provider_products" ThisKey="id" OtherKey="provider_id" Type="provider_product" />
     </Type>
   </Table>
   <Table Name="dbo.receipt" Member="receipts">
@@ -122,20 +87,6 @@
       <Association Name="receipt_receipt_detail" Member="receipt_details" ThisKey="id" OtherKey="receipt_id" Type="receipt_detail" />
       <Association Name="provider_receipt" Member="provider" ThisKey="provider_id" OtherKey="id" Type="provider" IsForeignKey="true" />
       <Association Name="staff_receipt" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.receipt_detail" Member="receipt_details">
-    <Type Name="receipt_detail">
-      <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="receipt_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="product_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="monetized" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="product_receipt_detail" Member="product" ThisKey="product_id" OtherKey="id" Type="product" IsForeignKey="true" />
-      <Association Name="receipt_receipt_detail" Member="receipt" ThisKey="receipt_id" OtherKey="id" Type="receipt" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.staff_permission" Member="staff_permissions">
@@ -179,6 +130,7 @@
       <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="staff_receipt" Member="receipts" ThisKey="id" OtherKey="staff_id" Type="receipt" />
       <Association Name="staff_staff_permission" Member="staff_permissions" ThisKey="id" OtherKey="staff_id" Type="staff_permission" />
+      <Association Name="staff_bill" Member="bills" ThisKey="id" OtherKey="staff_id" Type="bill" />
     </Type>
   </Table>
   <Table Name="dbo.category" Member="categories">
@@ -193,6 +145,56 @@
       <Association Name="category_product" Member="products" ThisKey="cat_id" OtherKey="cat_id" Type="product" />
       <Association Name="category_category" Member="categories" ThisKey="cat_id" OtherKey="parent_id" Type="category" />
       <Association Name="category_category" Member="category1" ThisKey="parent_id" OtherKey="cat_id" Type="category" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.customer" Member="customers">
+    <Type Name="customer">
+      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="address" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="phone" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="customer_bill" Member="bills" ThisKey="id" OtherKey="customer_id" Type="bill" />
+    </Type>
+  </Table>
+  <Table Name="dbo.provider_product" Member="provider_products">
+    <Type Name="provider_product">
+      <Column Name="product_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="provider_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="product_provider_product" Member="product" ThisKey="product_id" OtherKey="id" Type="product" IsForeignKey="true" />
+      <Association Name="provider_provider_product" Member="provider" ThisKey="provider_id" OtherKey="id" Type="provider" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.receipt_detail" Member="receipt_details">
+    <Type Name="receipt_detail">
+      <Column Name="receipt_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="product_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="monetized" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="product_receipt_detail" Member="product" ThisKey="product_id" OtherKey="id" Type="product" IsForeignKey="true" />
+      <Association Name="receipt_receipt_detail" Member="receipt" ThisKey="receipt_id" OtherKey="id" Type="receipt" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.bill" Member="bills">
+    <Type Name="bill">
+      <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="staff_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="bill_bill_detail" Member="bill_details" ThisKey="id" OtherKey="bill_id" Type="bill_detail" />
+      <Association Name="customer_bill" Member="customer" ThisKey="customer_id" OtherKey="id" Type="customer" IsForeignKey="true" />
+      <Association Name="staff_bill" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

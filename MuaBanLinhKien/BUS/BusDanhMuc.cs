@@ -36,7 +36,23 @@ namespace BUS
         {
             try
             {
+                pCat.created = DateTime.Now;
                 db.categories.InsertOnSubmit(pCat);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool Update(category pCat)
+        {
+            try
+            {
+                pCat.modified = DateTime.Now;
+                db.SubmitChanges();
+                return true;
             }
             catch (Exception ex)
             {
@@ -52,6 +68,25 @@ namespace BUS
                 return true;
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Delete(category pCat)
+        {
+            try
+            {
+                product pro = db.products.Where(p => p.cat_id == pCat.cat_id).FirstOrDefault();
+                category cat = db.categories.Where(c => c.parent_id == pCat.cat_id).FirstOrDefault();
+                if(pro != null || cat != null)
+                {
+                    return false;
+                }
+                db.categories.DeleteOnSubmit(pCat);
+                db.SubmitChanges();
+                return true;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

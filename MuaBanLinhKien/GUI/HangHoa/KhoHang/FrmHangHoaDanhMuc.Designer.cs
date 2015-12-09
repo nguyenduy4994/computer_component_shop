@@ -37,13 +37,6 @@
             this.btnDanhMucXoa = new DevExpress.XtraEditors.SimpleButton();
             this.btnDanhMucSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnDanhMucLamMoi = new DevExpress.XtraEditors.SimpleButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
-            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.dgvHangHoa = new DevExpress.XtraGrid.GridControl();
             this.gvHangHoa = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -54,13 +47,20 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnThemSanPham = new DevExpress.XtraEditors.SimpleButton();
+            this.btnXoaSanPham = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSuaSanPham = new DevExpress.XtraEditors.SimpleButton();
+            this.btnLamMoiSanPham = new DevExpress.XtraEditors.SimpleButton();
+            this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tlDanhMuc)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHangHoa)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -78,7 +78,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.flowLayoutPanel2);
             this.splitContainerControl1.Panel2.Text = "Hàng hóa";
             this.splitContainerControl1.Size = new System.Drawing.Size(799, 466);
-            this.splitContainerControl1.SplitterPosition = 253;
+            this.splitContainerControl1.SplitterPosition = 240;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -91,9 +91,12 @@
             this.tlDanhMuc.KeyFieldName = "cat_id";
             this.tlDanhMuc.Location = new System.Drawing.Point(0, 31);
             this.tlDanhMuc.Name = "tlDanhMuc";
+            this.tlDanhMuc.OptionsBehavior.Editable = false;
+            this.tlDanhMuc.OptionsBehavior.ReadOnly = true;
             this.tlDanhMuc.ParentFieldName = "parent_id";
-            this.tlDanhMuc.Size = new System.Drawing.Size(249, 431);
+            this.tlDanhMuc.Size = new System.Drawing.Size(236, 431);
             this.tlDanhMuc.TabIndex = 3;
+            this.tlDanhMuc.Click += new System.EventHandler(this.tlDanhMuc_Click);
             // 
             // treeListColumn2
             // 
@@ -113,7 +116,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(249, 31);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(236, 31);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // btnDanhMucThem
@@ -123,6 +126,7 @@
             this.btnDanhMucThem.Name = "btnDanhMucThem";
             this.btnDanhMucThem.Size = new System.Drawing.Size(24, 24);
             this.btnDanhMucThem.TabIndex = 1;
+            this.btnDanhMucThem.Click += new System.EventHandler(this.btnDanhMucThem_Click);
             // 
             // btnDanhMucXoa
             // 
@@ -131,6 +135,7 @@
             this.btnDanhMucXoa.Name = "btnDanhMucXoa";
             this.btnDanhMucXoa.Size = new System.Drawing.Size(24, 24);
             this.btnDanhMucXoa.TabIndex = 2;
+            this.btnDanhMucXoa.Click += new System.EventHandler(this.btnDanhMucXoa_Click);
             // 
             // btnDanhMucSua
             // 
@@ -139,6 +144,7 @@
             this.btnDanhMucSua.Name = "btnDanhMucSua";
             this.btnDanhMucSua.Size = new System.Drawing.Size(24, 24);
             this.btnDanhMucSua.TabIndex = 3;
+            this.btnDanhMucSua.Click += new System.EventHandler(this.btnDanhMucSua_Click);
             // 
             // btnDanhMucLamMoi
             // 
@@ -147,68 +153,7 @@
             this.btnDanhMucLamMoi.Name = "btnDanhMucLamMoi";
             this.btnDanhMucLamMoi.Size = new System.Drawing.Size(24, 24);
             this.btnDanhMucLamMoi.TabIndex = 4;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.simpleButton2);
-            this.flowLayoutPanel2.Controls.Add(this.simpleButton6);
-            this.flowLayoutPanel2.Controls.Add(this.simpleButton7);
-            this.flowLayoutPanel2.Controls.Add(this.simpleButton8);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(537, 31);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(3, 3);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(24, 24);
-            this.simpleButton2.TabIndex = 1;
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton6.Image")));
-            this.simpleButton6.Location = new System.Drawing.Point(33, 3);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(24, 24);
-            this.simpleButton6.TabIndex = 2;
-            // 
-            // simpleButton7
-            // 
-            this.simpleButton7.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton7.Image")));
-            this.simpleButton7.Location = new System.Drawing.Point(63, 3);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(24, 24);
-            this.simpleButton7.TabIndex = 3;
-            // 
-            // simpleButton8
-            // 
-            this.simpleButton8.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton8.Image")));
-            this.simpleButton8.Location = new System.Drawing.Point(93, 3);
-            this.simpleButton8.Name = "simpleButton8";
-            this.simpleButton8.Size = new System.Drawing.Size(24, 24);
-            this.simpleButton8.TabIndex = 4;
-            // 
-            // treeListColumn1
-            // 
-            this.treeListColumn1.Caption = "Mã danh mục";
-            this.treeListColumn1.FieldName = "cat_id";
-            this.treeListColumn1.Name = "treeListColumn1";
-            this.treeListColumn1.Visible = true;
-            this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 86;
-            // 
-            // treeListColumn3
-            // 
-            this.treeListColumn3.Caption = "Mã danh mục";
-            this.treeListColumn3.FieldName = "cat_id";
-            this.treeListColumn3.Name = "treeListColumn3";
-            this.treeListColumn3.Visible = true;
-            this.treeListColumn3.VisibleIndex = 0;
-            this.treeListColumn3.Width = 80;
+            this.btnDanhMucLamMoi.Click += new System.EventHandler(this.btnDanhMucLamMoi_Click);
             // 
             // dgvHangHoa
             // 
@@ -216,7 +161,7 @@
             this.dgvHangHoa.Location = new System.Drawing.Point(0, 31);
             this.dgvHangHoa.MainView = this.gvHangHoa;
             this.dgvHangHoa.Name = "dgvHangHoa";
-            this.dgvHangHoa.Size = new System.Drawing.Size(537, 431);
+            this.dgvHangHoa.Size = new System.Drawing.Size(550, 431);
             this.dgvHangHoa.TabIndex = 4;
             this.dgvHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvHangHoa});
@@ -305,6 +250,72 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnThemSanPham);
+            this.flowLayoutPanel2.Controls.Add(this.btnXoaSanPham);
+            this.flowLayoutPanel2.Controls.Add(this.btnSuaSanPham);
+            this.flowLayoutPanel2.Controls.Add(this.btnLamMoiSanPham);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(550, 31);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // btnThemSanPham
+            // 
+            this.btnThemSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnThemSanPham.Image")));
+            this.btnThemSanPham.Location = new System.Drawing.Point(3, 3);
+            this.btnThemSanPham.Name = "btnThemSanPham";
+            this.btnThemSanPham.Size = new System.Drawing.Size(24, 24);
+            this.btnThemSanPham.TabIndex = 1;
+            this.btnThemSanPham.Click += new System.EventHandler(this.btnThemSanPham_Click);
+            // 
+            // btnXoaSanPham
+            // 
+            this.btnXoaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaSanPham.Image")));
+            this.btnXoaSanPham.Location = new System.Drawing.Point(33, 3);
+            this.btnXoaSanPham.Name = "btnXoaSanPham";
+            this.btnXoaSanPham.Size = new System.Drawing.Size(24, 24);
+            this.btnXoaSanPham.TabIndex = 2;
+            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
+            // 
+            // btnSuaSanPham
+            // 
+            this.btnSuaSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaSanPham.Image")));
+            this.btnSuaSanPham.Location = new System.Drawing.Point(63, 3);
+            this.btnSuaSanPham.Name = "btnSuaSanPham";
+            this.btnSuaSanPham.Size = new System.Drawing.Size(24, 24);
+            this.btnSuaSanPham.TabIndex = 3;
+            this.btnSuaSanPham.Click += new System.EventHandler(this.btnSuaSanPham_Click);
+            // 
+            // btnLamMoiSanPham
+            // 
+            this.btnLamMoiSanPham.Image = ((System.Drawing.Image)(resources.GetObject("btnLamMoiSanPham.Image")));
+            this.btnLamMoiSanPham.Location = new System.Drawing.Point(93, 3);
+            this.btnLamMoiSanPham.Name = "btnLamMoiSanPham";
+            this.btnLamMoiSanPham.Size = new System.Drawing.Size(24, 24);
+            this.btnLamMoiSanPham.TabIndex = 4;
+            this.btnLamMoiSanPham.Click += new System.EventHandler(this.btnLamMoiSanPham_Click);
+            // 
+            // treeListColumn1
+            // 
+            this.treeListColumn1.Caption = "Mã danh mục";
+            this.treeListColumn1.FieldName = "cat_id";
+            this.treeListColumn1.Name = "treeListColumn1";
+            this.treeListColumn1.Visible = true;
+            this.treeListColumn1.VisibleIndex = 0;
+            this.treeListColumn1.Width = 86;
+            // 
+            // treeListColumn3
+            // 
+            this.treeListColumn3.Caption = "Mã danh mục";
+            this.treeListColumn3.FieldName = "cat_id";
+            this.treeListColumn3.Name = "treeListColumn3";
+            this.treeListColumn3.Visible = true;
+            this.treeListColumn3.VisibleIndex = 0;
+            this.treeListColumn3.Width = 80;
+            // 
             // FrmHangHoaDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -317,9 +328,9 @@
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tlDanhMuc)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvHangHoa)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,10 +346,10 @@
         private DevExpress.XtraTreeList.TreeList tlDanhMuc;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton7;
-        private DevExpress.XtraEditors.SimpleButton simpleButton8;
+        private DevExpress.XtraEditors.SimpleButton btnThemSanPham;
+        private DevExpress.XtraEditors.SimpleButton btnXoaSanPham;
+        private DevExpress.XtraEditors.SimpleButton btnSuaSanPham;
+        private DevExpress.XtraEditors.SimpleButton btnLamMoiSanPham;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn1;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn3;
         private DevExpress.XtraGrid.GridControl dgvHangHoa;

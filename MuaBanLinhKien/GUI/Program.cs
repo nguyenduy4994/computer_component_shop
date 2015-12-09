@@ -21,7 +21,7 @@ namespace GUI
             DevExpress.Skins.SkinManager.EnableFormSkins();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("Devexpress Style");
 
-            Application.Run(new FrmMain());
+            Application.Run(new GUI.HeThong.CauHinh.FrmDangNhap());
         }
     }
 }
