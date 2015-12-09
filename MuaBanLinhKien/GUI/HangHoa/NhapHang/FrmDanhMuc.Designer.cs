@@ -78,6 +78,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.spSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.splitterControl2 = new DevExpress.XtraEditors.SplitterControl();
+            this.btnLuuCT = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhapHang)).BeginInit();
@@ -199,6 +200,7 @@
             this.btnDanhMucSua.Name = "btnDanhMucSua";
             this.btnDanhMucSua.Size = new System.Drawing.Size(24, 24);
             this.btnDanhMucSua.TabIndex = 3;
+            this.btnDanhMucSua.Click += new System.EventHandler(this.btnDanhMucSua_Click);
             // 
             // btnDanhMucLamMoi
             // 
@@ -325,6 +327,7 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.btnXoaTrai);
+            this.flowLayoutPanel2.Controls.Add(this.btnLuuCT);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -385,7 +388,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "Mã sản phẩm";
-            this.gridColumn6.FieldName = "product_id";
+            this.gridColumn6.FieldName = "product.id";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
@@ -393,6 +396,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Tên sản phẩm";
+            this.gridColumn7.FieldName = "product.name";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 1;
@@ -400,6 +404,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn vị tính";
+            this.gridColumn8.FieldName = "product.unit";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 2;
@@ -407,6 +412,7 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Đơn giá";
+            this.gridColumn9.FieldName = "product.price";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 3;
@@ -414,6 +420,7 @@
             // gridColumn10
             // 
             this.gridColumn10.Caption = "Số lượng";
+            this.gridColumn10.FieldName = "quantity";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 4;
@@ -421,6 +428,7 @@
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Thành tiền";
+            this.gridColumn11.FieldName = "monetized";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 5;
@@ -582,6 +590,15 @@
             this.splitterControl2.TabIndex = 7;
             this.splitterControl2.TabStop = false;
             // 
+            // btnLuuCT
+            // 
+            this.btnLuuCT.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuCT.Image")));
+            this.btnLuuCT.Location = new System.Drawing.Point(674, 3);
+            this.btnLuuCT.Name = "btnLuuCT";
+            this.btnLuuCT.Size = new System.Drawing.Size(24, 24);
+            this.btnLuuCT.TabIndex = 5;
+            this.btnLuuCT.Click += new System.EventHandler(this.btnLuuCT_Click);
+            // 
             // FrmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +694,7 @@
         private DevExpress.XtraEditors.SpinEdit spSoLuong;
         private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.SimpleButton btnLuu;
+        private DevExpress.XtraEditors.SimpleButton btnLuuCT;
 
     }
 }

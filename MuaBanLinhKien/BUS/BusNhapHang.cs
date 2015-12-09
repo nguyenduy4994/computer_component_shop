@@ -57,5 +57,57 @@ namespace BUS
                 throw ex;
             }
         }
+        public bool Save()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public bool KiemTraTonTai(receipt pnh, product sp)
+        {
+            try
+            {
+                var p = from d in pnh.receipt_details
+                        where d.product_id.Equals(sp.id)
+                        select d;
+                return p.Count() == 1;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public object GetProduct(receipt pRec)
+        {
+            try
+            {
+                var p = from d in pRec.receipt_details
+                        select d;
+                return p;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool DeleteProduct(receipt_detail rd)
+        {
+            try
+            {
+                db.receipt_details.DeleteOnSubmit(rd);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -17,15 +17,30 @@ namespace BUS
             return Instance;
         }
         DAL.QLDataContext db = new QLDataContext();
-        public object GetAll()
+        public object GetAllBill()
         {
             try
             {
                 var hd = from h in db.bills
+                         where h.type == "hd"
                          select h;
                 return hd;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public object GetAllPrice()
+        {
+            try
+            {
+                var bg = from b in db.bills
+                         where b.type == "bg"
+                         select b;
+                return bg;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -64,6 +79,47 @@ namespace BUS
                 return true;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool KiemTraTonTai(bill bl, product sp)
+        {
+            try
+            {
+                var p = from b in bl.bill_details
+                        where b.product_id.Equals(sp.id)
+                        select b;
+                return p.Count() == 1;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public object GetProduct(bill b)
+        {
+            try
+            {
+                var bd = from d in b.bill_details
+                         select d;
+                return bd;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool DeleteProduct(bill_detail bd)
+        {
+            try
+            {
+                db.bill_details.DeleteOnSubmit(bd);
+                db.SubmitChanges();
+                return true;
+               
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }

@@ -301,7 +301,7 @@
             this.Controls.Add(this.splitterControl1);
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmDanhMucKhachHang";
-            this.Text = "FrmDanhMucKhachHang";
+            this.Text = "Danh mục khách hàng";
             this.Load += new System.EventHandler(this.FrmDanhMucKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);

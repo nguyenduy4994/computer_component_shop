@@ -33,6 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design">
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="DangNhap, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\TaiLieu\LTWD\Tiểu Luận\DA_LTCSHARP1_NHOM_17\DA_LTCSHARP1_NHOM_08\RELEASE\DangNhap.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Data.v14.2" />
     <Reference Include="DevExpress.Printing.v14.2.Core" />
     <Reference Include="DevExpress.Utils.v14.2" />
@@ -135,6 +154,25 @@
     <Compile Include="HangHoa\NhapHang\FrmDanhMuc.Designer.cs">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeThong\CauHinh\FrmCauHinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\CauHinh\FrmCauHinh.Designer.cs">
+      <DependentUpon>FrmCauHinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\CauHinh\FrmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HeThong\CauHinh\FrmDangNhap.Designer.cs">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeThong\CauHinh\myRegistry .cs" />
+    <Compile Include="MuaBan\HoaDon\FrmBaoGia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MuaBan\HoaDon\FrmBaoGia.Designer.cs">
+      <DependentUpon>FrmBaoGia.cs</DependentUpon>
+    </Compile>
     <Compile Include="MuaBan\HoaDon\FrmDanhMucHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,11 +197,23 @@
     <Compile Include="NhanVien\FrmNhanVien_DanhSach.Designer.cs">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </Compile>
+    <Compile Include="NhanVien\FrmThemNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\FrmThemNhanVien.Designer.cs">
+      <DependentUpon>FrmThemNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.Designer.cs">
       <DependentUpon>FrmNhanVien_PhanQuyen_DanhSach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\PhanQuyen\FrmPhanQuyen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\PhanQuyen\FrmPhanQuyen.Designer.cs">
+      <DependentUpon>FrmPhanQuyen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,6 +247,15 @@
     <EmbeddedResource Include="HangHoa\NhapHang\FrmDanhMuc.resx">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\CauHinh\FrmCauHinh.resx">
+      <DependentUpon>FrmCauHinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeThong\CauHinh\FrmDangNhap.resx">
+      <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MuaBan\HoaDon\FrmBaoGia.resx">
+      <DependentUpon>FrmBaoGia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MuaBan\HoaDon\FrmDanhMucHoaDon.resx">
       <DependentUpon>FrmDanhMucHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,8 +268,14 @@
     <EmbeddedResource Include="NhanVien\FrmNhanVien_DanhSach.resx">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\FrmThemNhanVien.resx">
+      <DependentUpon>FrmThemNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\PhanQuyen\FrmNhanVien_PhanQuyen_DanhSach.resx">
       <DependentUpon>FrmNhanVien_PhanQuyen_DanhSach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\PhanQuyen\FrmPhanQuyen.resx">
+      <DependentUpon>FrmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -237,7 +302,6 @@
     <Folder Include="BaoCao\" />
     <Folder Include="BaoHanh\BaoHanh\" />
     <Folder Include="BaoHanh\NhanBaoHanh\" />
-    <Folder Include="HeThong\CauHinh\" />
     <Folder Include="HeThong\GioiThieu\" />
     <Folder Include="Resources\" />
   </ItemGroup>

@@ -13,56 +13,55 @@ using BUS;
 
 namespace GUI.MuaBan.HoaDon
 {
-    public partial class FrmDanhMucHoaDon : DevExpress.XtraEditors.XtraForm
+    public partial class FrmBaoGia : DevExpress.XtraEditors.XtraForm
     {
         BusDanhMuc busDanhMuc = BusDanhMuc.GetInstance();
         BusHangHoa busHangHoa = BusHangHoa.GetInstance();
         BusKhachHang busKhachHang = BusKhachHang.GetInstance();
         BusNhanVien busNhanVien = BusNhanVien.GetInstance();
         BusHoaDon busHoaDon = BusHoaDon.GetInstance();
-
-        bill b = null;
-        public FrmDanhMucHoaDon()
+        public FrmBaoGia()
         {
             InitializeComponent();
         }
-        private void FrmDanhMucHoaDon_Load(object sender, EventArgs e)
+        bill b = null;
+        private void FrmBaoGia_Load(object sender, EventArgs e)
         {
-            lkKhachHang.Properties.DataSource = busKhachHang.GetAll();
-            lkNhanVien.Properties.DataSource = busNhanVien.GetAll();
-            dgvHoaDon.DataSource = busHoaDon.GetAllBill();
+            dgvPhieuBaoGia.DataSource = busHoaDon.GetAllPrice();
             lkDanhMucSP.Properties.DataSource = busDanhMuc.GetAll();
             dgvSanPham.DataSource = busHangHoa.GetAll();
             panelControl4.Enabled = false;
+            lkKhachHang.Properties.DataSource = busKhachHang.GetAll();
+            lkNhanVien.Properties.DataSource = busNhanVien.GetAll();
         }
 
-        private void gvHoaDon_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        private void gvPhieuBaoGia_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gvHoaDon.SelectedRowsCount != 1)
+            if (gvPhieuBaoGia.SelectedRowsCount != 1)
                 return;
-            b = (bill)gvHoaDon.GetFocusedRow();
+            b = (bill)gvPhieuBaoGia.GetFocusedRow();
             txtMaHoaDon.Text = b.id;
             dpNgayLap.EditValue = b.created;
             lkKhachHang.EditValue = b.customer_id;
             lkNhanVien.EditValue = b.staff_id;
-            //btnLuu.Enabled = btnHuy.Enabled = btnThemKhachHang.Enabled = false;
+            btnLuu.Enabled = btnHuy.Enabled = btnThemKhachHang.Enabled = false;
         }
 
-        private void gvHoaDon_DoubleClick(object sender, EventArgs e)
+        private void gvPhieuBaoGia_DoubleClick(object sender, EventArgs e)
         {
             btnDanhMucSua.PerformClick();
+        }
+
+        private void btnDanhMucLamMoi_Click(object sender, EventArgs e)
+        {
+            dgvPhieuBaoGia.DataSource = busHoaDon.GetAllPrice();
         }
 
         private void btnDanhMucThem_Click(object sender, EventArgs e)
         {
             panelControl4.Enabled = true;
             dpNgayLap.Focus();
-           // btnDanhMucThem.Enabled = false;
-        }
-
-        private void btnDanhMucLamMoi_Click(object sender, EventArgs e)
-        {
-            dgvHoaDon.DataSource = busHoaDon.GetAllBill();
+            btnDanhMucThem.Enabled = false;
         }
 
         private void btnDanhMucSua_Click(object sender, EventArgs e)
@@ -82,7 +81,7 @@ namespace GUI.MuaBan.HoaDon
         private void btnThemKhachHang_Click(object sender, EventArgs e)
         {
             DialogResult r = (new MuaBan.KhachHang.FrmThemKhachHang()).ShowDialog();
-            if(r == DialogResult.OK)
+            if (r == DialogResult.OK)
             {
                 lkKhachHang.Properties.DataSource = busKhachHang.GetAll();
             }
@@ -94,12 +93,17 @@ namespace GUI.MuaBan.HoaDon
             category cat = (category)lkDanhMucSP.GetSelectedDataRow();
             dgvSanPham.DataSource = busHangHoa.GetByCat(cat);
         }
+        public void CheckLoi(String pTen)
+        {
+            XtraMessageBox.Show("Thông tin " + pTen + " không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            return;
+        }
         private void btnThemTrai_Click(object sender, EventArgs e)
         {
             btnLuuCT.Enabled = true;
             if (gvSanPham.SelectedRowsCount == 0) return;
             product p = (product)gvSanPham.GetFocusedRow();
-            if(busHoaDon.KiemTraTonTai(b, p))
+            if (busHoaDon.KiemTraTonTai(b, p))
             {
                 XtraMessageBox.Show("Sản phẩm đã tồn tại!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 return;
@@ -111,32 +115,29 @@ namespace GUI.MuaBan.HoaDon
             bd.monetized = (int)(spSoLuong.Value * p.price);
             bd.product = p;
             bd.bill = b;
-            dgvChiTietHoaDon.DataSource = busHoaDon.GetProduct(b);
+            dgvCTPhieuBaoGia.DataSource = busHoaDon.GetProduct(b);
         }
 
         private void btnXoaTrai_Click(object sender, EventArgs e)
         {
-            if (gvChiTietHoaDon.GetFocusedRow() == null) return;
-            bill_detail db = (bill_detail)gvChiTietHoaDon.GetFocusedRow();
-            if (busHoaDon.DeleteProduct(db))
+            if (gvCTPhieuBaoGia.GetFocusedRow() == null) return;
+            bill_detail db = (bill_detail)gvCTPhieuBaoGia.GetFocusedRow();
+            if (busHoaDon.Save())
             {
-                dgvChiTietHoaDon.DataSource = busHoaDon.GetProduct(b);
+                dgvCTPhieuBaoGia.DataSource = busHoaDon.GetProduct(b);
             }
         }
 
-        private void btnHuy_Click_1(object sender, EventArgs e)
+        private void btnLuuCT_Click(object sender, EventArgs e)
         {
-            txtMaHoaDon.Text = txtTongTien.Text = txtThue.Text = txtThanhToan.Text = null;
-            dpNgayLap.EditValue = DateTime.Now;
-            lkKhachHang.EditValue = lkNhanVien.EditValue = null;
-            panelControl4.Enabled = false;
+            if (busHoaDon.Save())
+            {
+                XtraMessageBox.Show("Lưu thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                dgvCTPhieuBaoGia.DataSource = busHoaDon.GetProduct(b);
+            }
         }
-        public void CheckLoi(String pTen)
-        {
-            XtraMessageBox.Show("Thông tin " + pTen + " không được để trống", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-            return;
-        }
-        private void btnLuu_Click_1(object sender, EventArgs e)
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             if (dpNgayLap.EditValue == null)
             {
@@ -156,15 +157,13 @@ namespace GUI.MuaBan.HoaDon
             bill bl = new bill();
             bl.created = (DateTime)dpNgayLap.EditValue;
             bl.id = txtMaHoaDon.Text;
-            bl.type = "hd";
+            bl.type = "bg";
             customer c = (customer)lkKhachHang.GetSelectedDataRow();
             staff s = (staff)lkNhanVien.GetSelectedDataRow();
-            bl.customer_id = c.id;
-            bl.staff_id = s.id;
             bl.customer = c;
             bl.staff = s;
 
-            if (busHoaDon.Insert(bl))
+            if (busHoaDon.Save())
             {
                 XtraMessageBox.Show("Lưu thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 btnDanhMucLamMoi.PerformClick();
@@ -179,13 +178,5 @@ namespace GUI.MuaBan.HoaDon
             }
         }
 
-        private void btnLuuCT_Click(object sender, EventArgs e)
-        {
-            if (busHoaDon.Save())
-            {
-                XtraMessageBox.Show("Lưu thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                dgvChiTietHoaDon.DataSource = busHoaDon.GetProduct(b);
-            }
-        }
     }
 }

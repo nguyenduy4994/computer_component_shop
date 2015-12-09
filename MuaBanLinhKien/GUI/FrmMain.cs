@@ -139,7 +139,8 @@ namespace GUI
 
         void barBtnThemNhaCungCap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            HangHoa.NhaCungCap.FrmDanhMuc frm = new HangHoa.NhaCungCap.FrmDanhMuc();
+            OpenTab(frm);
         }
 
         void barBtnPhieuNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -150,12 +151,13 @@ namespace GUI
 
         void barBtnNhapHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            HangHoa.NhapHang.FrmDanhMuc frm = new HangHoa.NhapHang.FrmDanhMuc();
+            OpenTab(frm);
         }
 
         void barBtnThemHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            DialogResult r = (new HangHoa.KhoHang.FrmThemSanPham()).ShowDialog();
         }
 
         void barBtnDanhSachKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -166,12 +168,13 @@ namespace GUI
 
         void barBtnThemKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+            DialogResult r = (new MuaBan.KhachHang.FrmThemKhachHang()).ShowDialog();
         }
 
         void barBtnPhieuBaoGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            MuaBan.HoaDon.FrmBaoGia frm = new MuaBan.HoaDon.FrmBaoGia();
+            OpenTab(frm);
         }
 
         void barBtnHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -182,11 +185,14 @@ namespace GUI
 
         void barBtnLapPhieuBaoGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            MuaBan.HoaDon.FrmBaoGia frm = new MuaBan.HoaDon.FrmBaoGia();
+            OpenTab(frm);
         }
 
         void barBtnLapHoaDon_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            MuaBan.HoaDon.FrmDanhMucHoaDon frm = new MuaBan.HoaDon.FrmDanhMucHoaDon();
+            OpenTab(frm);
         }
 
         void barBtnDanhMucHangHoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

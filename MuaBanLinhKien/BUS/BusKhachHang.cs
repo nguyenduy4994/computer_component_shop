@@ -34,7 +34,6 @@ namespace BUS
         {
             try
             {
-                pCus.created = DateTime.Now;
                 db.customers.InsertOnSubmit(pCus);
                 db.SubmitChanges();
                 return true;
@@ -71,6 +70,18 @@ namespace BUS
                 return true;
             }
             catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool Save()
+        {
+            try
+            {
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
             {
                 throw ex;
             }
