@@ -49,7 +49,7 @@ namespace GUI.HangHoa.NhapHang
             dgvSanPham.DataSource = busHangHoa.GetAll();
             Enable(false);
         }
-
+        
         private void gvPhieuNhapHang_DoubleClick(object sender, EventArgs e)
         {
             btnDanhMucSua.PerformClick();
@@ -62,6 +62,9 @@ namespace GUI.HangHoa.NhapHang
         {
             Enable(true);
             dpNgayLap.Focus();
+            txtMaPhieuNhap.Text = busNhapHang.getMa();
+            dpNgayLap.EditValue = null;
+
         }
 
         private void btnDanhMucLamMoi_Click(object sender, EventArgs e)

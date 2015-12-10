@@ -7,12 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using DAL;
 
 namespace GUI
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
+        public staff NhanVien;
+
         public FrmMain()
         {
             InitializeComponent();
@@ -65,18 +68,45 @@ namespace GUI
             this.Load += FrmMain_Load;
         }
 
+        BUS.BusPhanQuyen phanquyen = BUS.BusPhanQuyen.GetInstance();
+
         void FrmMain_Load(object sender, EventArgs e)
         {
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide1);
+            
             ImgSlide.Images.Add(GUI.Properties.Resources.slide2);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide3);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide4);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide5);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide6);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide7);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide8);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide9);
-            ImgSlide.Images.Add(GUI.Properties.Resources.slide10);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide3);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide4);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide5);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide6);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide7);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide8);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide9);
+            //ImgSlide.Images.Add(GUI.Properties.Resources.slide10);
+            NhanVien = phanquyen.GetUsername(this.Tag.ToString());
+
+            
+            
+            if (NhanVien == null) return;
+            barTxtNhanVien.Caption = NhanVien.name;
+            barTxtDangNhap.Caption = "Đăng xuất";
+            List<staff_permission> permissions = phanquyen.GetPermissions(NhanVien);
+
+            Dictionary<string, bool> quyen = new Dictionary<string, bool>();
+            foreach (staff_permission sp in permissions)
+            {
+                quyen.Add(sp.permission.id, sp.allow);
+            }
+
+            // dat quyen tuong ung voi rib
+            ribHoaDon.Enabled = quyen["QLHD"];
+            ribCauHinh.Enabled = quyen["QLHT"];
+            ribHangHoa.Enabled = quyen["QLHH"];
+            ribKhachHang.Enabled = quyen["QLKH"];
+            ribNhaCungCap.Enabled = quyen["QLNCC"];
+            ribNhanVien.Enabled = quyen["QLNV"];
+            ribNhapHang.Enabled = quyen["QLNH"];
+            ribPhanQuyen.Enabled = quyen["QLPQ"];
+
 
             
         }
@@ -103,7 +133,8 @@ namespace GUI
 
         void barBtnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            GUI.NhanVien.PhanQuyen.FrmPhanQuyen frm = new NhanVien.PhanQuyen.FrmPhanQuyen();
+            OpenTab(frm);
         }
 
         void barBtnThemNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -257,6 +288,33 @@ namespace GUI
             }
 
             return false;
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            GUI.HangHoa.KhoHang.FrmHangHoaDanhMuc frm = new HangHoa.KhoHang.FrmHangHoaDanhMuc();
+            OpenTab(frm);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            GUI.MuaBan.HoaDon.FrmDanhMucHoaDon frm = new MuaBan.HoaDon.FrmDanhMucHoaDon();
+            OpenTab(frm);
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            GUI.HangHoa.NhapHang.FrmDanhMuc frm = new HangHoa.NhapHang.FrmDanhMuc();
+            OpenTab(frm);
+        }
+
+        private void barTxtDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(barTxtDangNhap.Caption == "Đăng xuất")
+            {
+                this.Close();
+                
+            }
         }
     }
 }

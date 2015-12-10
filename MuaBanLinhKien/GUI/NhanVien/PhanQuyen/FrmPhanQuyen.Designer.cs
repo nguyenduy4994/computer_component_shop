@@ -41,27 +41,27 @@
             this.btnDanhMucSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnDanhMucLamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.dgvQuyen = new DevExpress.XtraGrid.GridControl();
             this.gvQuyen = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQuyen)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQuyen)).BeginInit();
             this.SuspendLayout();
             // 
             // imageCollection1
@@ -89,6 +89,7 @@
             this.gvNhanVien.OptionsBehavior.Editable = false;
             this.gvNhanVien.OptionsBehavior.ReadOnly = true;
             this.gvNhanVien.OptionsView.ShowGroupPanel = false;
+            this.gvNhanVien.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvNhanVien_FocusedRowChanged);
             // 
             // gridColumn4
             // 
@@ -163,43 +164,6 @@
             this.panelControl2.Size = new System.Drawing.Size(565, 510);
             this.panelControl2.TabIndex = 7;
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.btnLuu);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(565, 31);
-            this.flowLayoutPanel2.TabIndex = 4;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
-            this.btnLuu.Location = new System.Drawing.Point(538, 3);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(24, 24);
-            this.btnLuu.TabIndex = 5;
-            // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Location = new System.Drawing.Point(232, 0);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(5, 510);
-            this.splitterControl1.TabIndex = 6;
-            this.splitterControl1.TabStop = false;
-            // 
-            // panelControl1
-            // 
-            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.panelControl1.Controls.Add(this.dgvNhanVien);
-            this.panelControl1.Controls.Add(this.flowLayoutPanel1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(232, 510);
-            this.panelControl1.TabIndex = 5;
-            // 
             // dgvQuyen
             // 
             this.dgvQuyen.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -258,6 +222,43 @@
             this.gridColumn6.VisibleIndex = 3;
             this.gridColumn6.Width = 153;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.btnLuu);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(565, 31);
+            this.flowLayoutPanel2.TabIndex = 4;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuu.Image")));
+            this.btnLuu.Location = new System.Drawing.Point(538, 3);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(24, 24);
+            this.btnLuu.TabIndex = 5;
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Location = new System.Drawing.Point(232, 0);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(5, 510);
+            this.splitterControl1.TabIndex = 6;
+            this.splitterControl1.TabStop = false;
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.dgvNhanVien);
+            this.panelControl1.Controls.Add(this.flowLayoutPanel1);
+            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(232, 510);
+            this.panelControl1.TabIndex = 5;
+            // 
             // FrmPhanQuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,17 +269,18 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "FrmPhanQuyen";
             this.Text = "Phân quyền";
+            this.Load += new System.EventHandler(this.FrmPhanQuyen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvQuyen)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvQuyen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvQuyen)).EndInit();
             this.ResumeLayout(false);
 
         }

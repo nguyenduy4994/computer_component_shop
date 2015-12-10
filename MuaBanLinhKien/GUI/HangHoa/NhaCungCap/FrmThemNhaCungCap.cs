@@ -49,5 +49,10 @@ namespace GUI.HangHoa.NhaCungCap
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void FrmThemNhaCungCap_Load(object sender, EventArgs e)
+        {
+            txtMa.Text = busNhaCungCap.getMa();
+        }
     }
 }

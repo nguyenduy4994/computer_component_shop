@@ -40,14 +40,18 @@
             this.btnDanhMucSua = new DevExpress.XtraEditors.SimpleButton();
             this.btnDanhMucLamMoi = new DevExpress.XtraEditors.SimpleButton();
             this.btnLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.txtUser = new DevExpress.XtraEditors.TextEdit();
             this.txtMaNV = new DevExpress.XtraEditors.TextEdit();
             this.lbGioiTinh = new DevExpress.XtraEditors.LabelControl();
+            this.lbUserName = new DevExpress.XtraEditors.LabelControl();
             this.lbEmail = new DevExpress.XtraEditors.LabelControl();
             this.lnMaNV = new DevExpress.XtraEditors.LabelControl();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
+            this.txtPass = new DevExpress.XtraEditors.TextEdit();
             this.lbNgaySinh = new DevExpress.XtraEditors.LabelControl();
             this.txtTenNV = new DevExpress.XtraEditors.TextEdit();
+            this.lbPassword = new DevExpress.XtraEditors.LabelControl();
             this.lbDiaChi = new DevExpress.XtraEditors.LabelControl();
             this.lbTenNV = new DevExpress.XtraEditors.LabelControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
@@ -61,10 +65,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lbPassword = new DevExpress.XtraEditors.LabelControl();
-            this.txtPass = new DevExpress.XtraEditors.TextEdit();
-            this.lbUserName = new DevExpress.XtraEditors.LabelControl();
-            this.txtUser = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkNu.Properties)).BeginInit();
@@ -72,14 +72,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpNgaySinh.Properties)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -212,10 +212,18 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // txtUser
+            // 
+            this.txtUser.Location = new System.Drawing.Point(101, 123);
+            this.txtUser.Name = "txtUser";
+            this.txtUser.Size = new System.Drawing.Size(195, 20);
+            this.txtUser.TabIndex = 7;
+            // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(101, 51);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Properties.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(195, 20);
             this.txtMaNV.TabIndex = 7;
             // 
@@ -226,6 +234,14 @@
             this.lbGioiTinh.Size = new System.Drawing.Size(38, 13);
             this.lbGioiTinh.TabIndex = 0;
             this.lbGioiTinh.Text = "Giới tính";
+            // 
+            // lbUserName
+            // 
+            this.lbUserName.Location = new System.Drawing.Point(12, 126);
+            this.lbUserName.Name = "lbUserName";
+            this.lbUserName.Size = new System.Drawing.Size(51, 13);
+            this.lbUserName.TabIndex = 0;
+            this.lbUserName.Text = "User name";
             // 
             // lbEmail
             // 
@@ -257,6 +273,13 @@
             this.txtDiaChi.Size = new System.Drawing.Size(195, 20);
             this.txtDiaChi.TabIndex = 7;
             // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(101, 159);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(195, 20);
+            this.txtPass.TabIndex = 7;
+            // 
             // lbNgaySinh
             // 
             this.lbNgaySinh.Location = new System.Drawing.Point(12, 198);
@@ -271,6 +294,14 @@
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(195, 20);
             this.txtTenNV.TabIndex = 7;
+            // 
+            // lbPassword
+            // 
+            this.lbPassword.Location = new System.Drawing.Point(12, 162);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(46, 13);
+            this.lbPassword.TabIndex = 0;
+            this.lbPassword.Text = "Password";
             // 
             // lbDiaChi
             // 
@@ -397,36 +428,6 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
-            // lbPassword
-            // 
-            this.lbPassword.Location = new System.Drawing.Point(12, 162);
-            this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(46, 13);
-            this.lbPassword.TabIndex = 0;
-            this.lbPassword.Text = "Password";
-            // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(101, 159);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(195, 20);
-            this.txtPass.TabIndex = 7;
-            // 
-            // lbUserName
-            // 
-            this.lbUserName.Location = new System.Drawing.Point(12, 126);
-            this.lbUserName.Name = "lbUserName";
-            this.lbUserName.Size = new System.Drawing.Size(51, 13);
-            this.lbUserName.TabIndex = 0;
-            this.lbUserName.Text = "User name";
-            // 
-            // txtUser
-            // 
-            this.txtUser.Location = new System.Drawing.Point(101, 123);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(195, 20);
-            this.txtUser.TabIndex = 7;
-            // 
             // FrmNhanVien_DanhSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,14 +446,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dpNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpNgaySinh.Properties)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVien)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPass.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

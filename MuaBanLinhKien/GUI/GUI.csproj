@@ -345,6 +345,24 @@
   <ItemGroup>
     <None Include="Images\slide10.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656260_shopping-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656412_bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656528_icon-68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656669_icon-68.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656685_bill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Images\1449656702_shopping-add.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

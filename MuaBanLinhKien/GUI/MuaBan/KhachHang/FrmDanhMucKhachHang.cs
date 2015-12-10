@@ -53,6 +53,7 @@ namespace GUI.MuaBan.KhachHang
             Enable(true);
             txtMaKhachHang.Text = txtTenKhachHang.Text = txtSoDienThoai.Text = txtDiaChi.Text = null;
             txtTenKhachHang.Focus();
+            txtMaKhachHang.Text = busKhachHang.getMa();
             s = "Them";
         }
 

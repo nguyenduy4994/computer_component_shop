@@ -84,6 +84,7 @@ namespace GUI.NhanVien
             XoaTrang();
             txtTenNV.Focus();
             s = "Them";
+            txtMaNV.Text = busNhanVien.getMa();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

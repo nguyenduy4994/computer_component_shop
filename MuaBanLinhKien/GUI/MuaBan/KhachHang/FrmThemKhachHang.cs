@@ -68,5 +68,10 @@ namespace GUI.MuaBan.KhachHang
             DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
+
+        private void FrmThemKhachHang_Load(object sender, EventArgs e)
+        {
+            txtMa.Text = busKhachHang.getMa();
+        }
     }
 }

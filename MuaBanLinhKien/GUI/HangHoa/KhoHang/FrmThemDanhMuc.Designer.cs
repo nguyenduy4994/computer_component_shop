@@ -76,6 +76,7 @@
             // 
             // txtMaDanhMuc
             // 
+            this.txtMaDanhMuc.Enabled = false;
             this.txtMaDanhMuc.Location = new System.Drawing.Point(106, 56);
             this.txtMaDanhMuc.Name = "txtMaDanhMuc";
             this.txtMaDanhMuc.Size = new System.Drawing.Size(315, 20);

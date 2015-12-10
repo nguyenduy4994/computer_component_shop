@@ -118,34 +118,52 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="slide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1449656412_bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656412_bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slide10" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="slide9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slide2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="slide3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="slide4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="slide5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="slide6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1449656528_icon-68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656528_icon-68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slide7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\slide7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="slide6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide10" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide10.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1449656260_shopping-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656260_shopping-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slide5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\slide5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="slide8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\slide8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slide9" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\slide9.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1449656669_icon-68" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656669_icon-68.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1449656685_bill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656685_bill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1449656702_shopping-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\1449656702_shopping-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

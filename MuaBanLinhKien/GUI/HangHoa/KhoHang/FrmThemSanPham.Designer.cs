@@ -81,6 +81,7 @@
             // 
             // txtMaSanPham
             // 
+            this.txtMaSanPham.Enabled = false;
             this.txtMaSanPham.Location = new System.Drawing.Point(104, 68);
             this.txtMaSanPham.Name = "txtMaSanPham";
             this.txtMaSanPham.Size = new System.Drawing.Size(315, 20);

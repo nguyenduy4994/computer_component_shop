@@ -139,6 +139,7 @@
             // 
             this.txtMaNV.Location = new System.Drawing.Point(109, 70);
             this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Properties.ReadOnly = true;
             this.txtMaNV.Size = new System.Drawing.Size(195, 20);
             this.txtMaNV.TabIndex = 25;
             // 
@@ -261,6 +262,7 @@
             this.Controls.Add(this.labelControl2);
             this.Name = "FrmThemNhanVien";
             this.Text = "Thêm nhân viên";
+            this.Load += new System.EventHandler(this.FrmThemNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chkNu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chkNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dpNgaySinh.Properties.CalendarTimeProperties)).EndInit();

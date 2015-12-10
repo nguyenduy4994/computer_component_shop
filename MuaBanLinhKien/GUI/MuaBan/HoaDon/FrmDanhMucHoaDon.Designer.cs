@@ -416,11 +416,13 @@
             this.simpleButton1.Size = new System.Drawing.Size(94, 25);
             this.simpleButton1.TabIndex = 25;
             this.simpleButton1.Text = "Thanh toán";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txtThanhToan
             // 
             this.txtThanhToan.Location = new System.Drawing.Point(498, 35);
             this.txtThanhToan.Name = "txtThanhToan";
+            this.txtThanhToan.Properties.ReadOnly = true;
             this.txtThanhToan.Size = new System.Drawing.Size(99, 20);
             this.txtThanhToan.TabIndex = 22;
             // 
@@ -434,8 +436,10 @@
             // 
             // txtThue
             // 
+            this.txtThue.EditValue = "10%";
             this.txtThue.Location = new System.Drawing.Point(262, 35);
             this.txtThue.Name = "txtThue";
+            this.txtThue.Properties.ReadOnly = true;
             this.txtThue.Size = new System.Drawing.Size(99, 20);
             this.txtThue.TabIndex = 23;
             // 
@@ -451,6 +455,7 @@
             // 
             this.txtTongTien.Location = new System.Drawing.Point(74, 35);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Properties.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(99, 20);
             this.txtTongTien.TabIndex = 24;
             // 
@@ -483,8 +488,10 @@
             // 
             // txtMaHoaDon
             // 
+            this.txtMaHoaDon.Enabled = false;
             this.txtMaHoaDon.Location = new System.Drawing.Point(79, 34);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Properties.ReadOnly = true;
             this.txtMaHoaDon.Size = new System.Drawing.Size(163, 20);
             this.txtMaHoaDon.TabIndex = 17;
             // 

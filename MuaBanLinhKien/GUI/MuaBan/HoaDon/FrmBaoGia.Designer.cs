@@ -417,11 +417,13 @@
             this.btnThanhToan.Size = new System.Drawing.Size(94, 25);
             this.btnThanhToan.TabIndex = 18;
             this.btnThanhToan.Text = "Thanh toán";
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // txtThanhToan
             // 
             this.txtThanhToan.Location = new System.Drawing.Point(502, 33);
             this.txtThanhToan.Name = "txtThanhToan";
+            this.txtThanhToan.Properties.ReadOnly = true;
             this.txtThanhToan.Size = new System.Drawing.Size(99, 20);
             this.txtThanhToan.TabIndex = 17;
             // 
@@ -452,6 +454,7 @@
             // 
             this.txtTongTien.Location = new System.Drawing.Point(78, 33);
             this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Properties.ReadOnly = true;
             this.txtTongTien.Size = new System.Drawing.Size(99, 20);
             this.txtTongTien.TabIndex = 17;
             // 
@@ -486,6 +489,7 @@
             // 
             this.txtMaHoaDon.Location = new System.Drawing.Point(102, 34);
             this.txtMaHoaDon.Name = "txtMaHoaDon";
+            this.txtMaHoaDon.Properties.ReadOnly = true;
             this.txtMaHoaDon.Size = new System.Drawing.Size(140, 20);
             this.txtMaHoaDon.TabIndex = 17;
             // 

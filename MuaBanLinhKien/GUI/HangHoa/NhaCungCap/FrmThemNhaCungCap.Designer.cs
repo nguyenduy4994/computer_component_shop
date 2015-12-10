@@ -69,6 +69,7 @@
             // 
             this.txtMa.Location = new System.Drawing.Point(107, 56);
             this.txtMa.Name = "txtMa";
+            this.txtMa.Properties.ReadOnly = true;
             this.txtMa.Size = new System.Drawing.Size(315, 20);
             this.txtMa.TabIndex = 0;
             // 
@@ -181,6 +182,7 @@
             this.Controls.Add(this.labelControl2);
             this.Name = "FrmThemNhaCungCap";
             this.Text = "Thêm nhà cung cấp";
+            this.Load += new System.EventHandler(this.FrmThemNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();

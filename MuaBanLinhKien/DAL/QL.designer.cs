@@ -48,9 +48,6 @@ namespace DAL
     partial void Insertreceipt(receipt instance);
     partial void Updatereceipt(receipt instance);
     partial void Deletereceipt(receipt instance);
-    partial void Insertstaff_permission(staff_permission instance);
-    partial void Updatestaff_permission(staff_permission instance);
-    partial void Deletestaff_permission(staff_permission instance);
     partial void Insertwarranty(warranty instance);
     partial void Updatewarranty(warranty instance);
     partial void Deletewarranty(warranty instance);
@@ -72,6 +69,9 @@ namespace DAL
     partial void Insertbill(bill instance);
     partial void Updatebill(bill instance);
     partial void Deletebill(bill instance);
+    partial void Insertstaff_permission(staff_permission instance);
+    partial void Updatestaff_permission(staff_permission instance);
+    partial void Deletestaff_permission(staff_permission instance);
     #endregion
 		
 		public QLDataContext() : 
@@ -152,14 +152,6 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<staff_permission> staff_permissions
-		{
-			get
-			{
-				return this.GetTable<staff_permission>();
-			}
-		}
-		
 		public System.Data.Linq.Table<warranty> warranties
 		{
 			get
@@ -213,6 +205,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<bill>();
+			}
+		}
+		
+		public System.Data.Linq.Table<staff_permission> staff_permissions
+		{
+			get
+			{
+				return this.GetTable<staff_permission>();
 			}
 		}
 	}
@@ -2156,294 +2156,6 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.staff_permission")]
-	public partial class staff_permission : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _id;
-		
-		private string _staff_id;
-		
-		private string _permission_id;
-		
-		private bool _allow;
-		
-		private bool _trash;
-		
-		private System.DateTime _created;
-		
-		private System.Nullable<System.DateTime> _modified;
-		
-		private EntityRef<permission> _permission;
-		
-		private EntityRef<staff> _staff;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(string value);
-    partial void OnidChanged();
-    partial void Onstaff_idChanging(string value);
-    partial void Onstaff_idChanged();
-    partial void Onpermission_idChanging(string value);
-    partial void Onpermission_idChanged();
-    partial void OnallowChanging(bool value);
-    partial void OnallowChanged();
-    partial void OntrashChanging(bool value);
-    partial void OntrashChanged();
-    partial void OncreatedChanging(System.DateTime value);
-    partial void OncreatedChanged();
-    partial void OnmodifiedChanging(System.Nullable<System.DateTime> value);
-    partial void OnmodifiedChanged();
-    #endregion
-		
-		public staff_permission()
-		{
-			this._permission = default(EntityRef<permission>);
-			this._staff = default(EntityRef<staff>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_id", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string staff_id
-		{
-			get
-			{
-				return this._staff_id;
-			}
-			set
-			{
-				if ((this._staff_id != value))
-				{
-					if (this._staff.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onstaff_idChanging(value);
-					this.SendPropertyChanging();
-					this._staff_id = value;
-					this.SendPropertyChanged("staff_id");
-					this.Onstaff_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string permission_id
-		{
-			get
-			{
-				return this._permission_id;
-			}
-			set
-			{
-				if ((this._permission_id != value))
-				{
-					if (this._permission.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onpermission_idChanging(value);
-					this.SendPropertyChanging();
-					this._permission_id = value;
-					this.SendPropertyChanged("permission_id");
-					this.Onpermission_idChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_allow", DbType="Bit NOT NULL")]
-		public bool allow
-		{
-			get
-			{
-				return this._allow;
-			}
-			set
-			{
-				if ((this._allow != value))
-				{
-					this.OnallowChanging(value);
-					this.SendPropertyChanging();
-					this._allow = value;
-					this.SendPropertyChanged("allow");
-					this.OnallowChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trash", DbType="Bit NOT NULL")]
-		public bool trash
-		{
-			get
-			{
-				return this._trash;
-			}
-			set
-			{
-				if ((this._trash != value))
-				{
-					this.OntrashChanging(value);
-					this.SendPropertyChanging();
-					this._trash = value;
-					this.SendPropertyChanged("trash");
-					this.OntrashChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
-		public System.DateTime created
-		{
-			get
-			{
-				return this._created;
-			}
-			set
-			{
-				if ((this._created != value))
-				{
-					this.OncreatedChanging(value);
-					this.SendPropertyChanging();
-					this._created = value;
-					this.SendPropertyChanged("created");
-					this.OncreatedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified", DbType="DateTime")]
-		public System.Nullable<System.DateTime> modified
-		{
-			get
-			{
-				return this._modified;
-			}
-			set
-			{
-				if ((this._modified != value))
-				{
-					this.OnmodifiedChanging(value);
-					this.SendPropertyChanging();
-					this._modified = value;
-					this.SendPropertyChanged("modified");
-					this.OnmodifiedChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="permission_staff_permission", Storage="_permission", ThisKey="permission_id", OtherKey="id", IsForeignKey=true)]
-		public permission permission
-		{
-			get
-			{
-				return this._permission.Entity;
-			}
-			set
-			{
-				permission previousValue = this._permission.Entity;
-				if (((previousValue != value) 
-							|| (this._permission.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._permission.Entity = null;
-						previousValue.staff_permissions.Remove(this);
-					}
-					this._permission.Entity = value;
-					if ((value != null))
-					{
-						value.staff_permissions.Add(this);
-						this._permission_id = value.id;
-					}
-					else
-					{
-						this._permission_id = default(string);
-					}
-					this.SendPropertyChanged("permission");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_staff_permission", Storage="_staff", ThisKey="staff_id", OtherKey="id", IsForeignKey=true)]
-		public staff staff
-		{
-			get
-			{
-				return this._staff.Entity;
-			}
-			set
-			{
-				staff previousValue = this._staff.Entity;
-				if (((previousValue != value) 
-							|| (this._staff.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._staff.Entity = null;
-						previousValue.staff_permissions.Remove(this);
-					}
-					this._staff.Entity = value;
-					if ((value != null))
-					{
-						value.staff_permissions.Add(this);
-						this._staff_id = value.id;
-					}
-					else
-					{
-						this._staff_id = default(string);
-					}
-					this.SendPropertyChanged("staff");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.warranty")]
 	public partial class warranty : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2710,9 +2422,9 @@ namespace DAL
 		
 		private EntitySet<receipt> _receipts;
 		
-		private EntitySet<staff_permission> _staff_permissions;
-		
 		private EntitySet<bill> _bills;
+		
+		private EntitySet<staff_permission> _staff_permissions;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2747,8 +2459,8 @@ namespace DAL
 		public staff()
 		{
 			this._receipts = new EntitySet<receipt>(new Action<receipt>(this.attach_receipts), new Action<receipt>(this.detach_receipts));
-			this._staff_permissions = new EntitySet<staff_permission>(new Action<staff_permission>(this.attach_staff_permissions), new Action<staff_permission>(this.detach_staff_permissions));
 			this._bills = new EntitySet<bill>(new Action<bill>(this.attach_bills), new Action<bill>(this.detach_bills));
+			this._staff_permissions = new EntitySet<staff_permission>(new Action<staff_permission>(this.attach_staff_permissions), new Action<staff_permission>(this.detach_staff_permissions));
 			OnCreated();
 		}
 		
@@ -3005,19 +2717,6 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_staff_permission", Storage="_staff_permissions", ThisKey="id", OtherKey="staff_id")]
-		public EntitySet<staff_permission> staff_permissions
-		{
-			get
-			{
-				return this._staff_permissions;
-			}
-			set
-			{
-				this._staff_permissions.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_bill", Storage="_bills", ThisKey="id", OtherKey="staff_id")]
 		public EntitySet<bill> bills
 		{
@@ -3028,6 +2727,19 @@ namespace DAL
 			set
 			{
 				this._bills.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_staff_permission", Storage="_staff_permissions", ThisKey="id", OtherKey="staff_id")]
+		public EntitySet<staff_permission> staff_permissions
+		{
+			get
+			{
+				return this._staff_permissions;
+			}
+			set
+			{
+				this._staff_permissions.Assign(value);
 			}
 		}
 		
@@ -3063,18 +2775,6 @@ namespace DAL
 			entity.staff = null;
 		}
 		
-		private void attach_staff_permissions(staff_permission entity)
-		{
-			this.SendPropertyChanging();
-			entity.staff = this;
-		}
-		
-		private void detach_staff_permissions(staff_permission entity)
-		{
-			this.SendPropertyChanging();
-			entity.staff = null;
-		}
-		
 		private void attach_bills(bill entity)
 		{
 			this.SendPropertyChanging();
@@ -3082,6 +2782,18 @@ namespace DAL
 		}
 		
 		private void detach_bills(bill entity)
+		{
+			this.SendPropertyChanging();
+			entity.staff = null;
+		}
+		
+		private void attach_staff_permissions(staff_permission entity)
+		{
+			this.SendPropertyChanging();
+			entity.staff = this;
+		}
+		
+		private void detach_staff_permissions(staff_permission entity)
 		{
 			this.SendPropertyChanging();
 			entity.staff = null;
@@ -4466,6 +4178,270 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.bill = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.staff_permission")]
+	public partial class staff_permission : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _staff_id;
+		
+		private string _permission_id;
+		
+		private bool _allow;
+		
+		private bool _trash;
+		
+		private System.DateTime _created;
+		
+		private System.Nullable<System.DateTime> _modified;
+		
+		private EntityRef<permission> _permission;
+		
+		private EntityRef<staff> _staff;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onstaff_idChanging(string value);
+    partial void Onstaff_idChanged();
+    partial void Onpermission_idChanging(string value);
+    partial void Onpermission_idChanged();
+    partial void OnallowChanging(bool value);
+    partial void OnallowChanged();
+    partial void OntrashChanging(bool value);
+    partial void OntrashChanged();
+    partial void OncreatedChanging(System.DateTime value);
+    partial void OncreatedChanged();
+    partial void OnmodifiedChanging(System.Nullable<System.DateTime> value);
+    partial void OnmodifiedChanged();
+    #endregion
+		
+		public staff_permission()
+		{
+			this._permission = default(EntityRef<permission>);
+			this._staff = default(EntityRef<staff>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_staff_id", DbType="NVarChar(25) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string staff_id
+		{
+			get
+			{
+				return this._staff_id;
+			}
+			set
+			{
+				if ((this._staff_id != value))
+				{
+					if (this._staff.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onstaff_idChanging(value);
+					this.SendPropertyChanging();
+					this._staff_id = value;
+					this.SendPropertyChanged("staff_id");
+					this.Onstaff_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_permission_id", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string permission_id
+		{
+			get
+			{
+				return this._permission_id;
+			}
+			set
+			{
+				if ((this._permission_id != value))
+				{
+					if (this._permission.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onpermission_idChanging(value);
+					this.SendPropertyChanging();
+					this._permission_id = value;
+					this.SendPropertyChanged("permission_id");
+					this.Onpermission_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_allow", DbType="Bit NOT NULL")]
+		public bool allow
+		{
+			get
+			{
+				return this._allow;
+			}
+			set
+			{
+				if ((this._allow != value))
+				{
+					this.OnallowChanging(value);
+					this.SendPropertyChanging();
+					this._allow = value;
+					this.SendPropertyChanged("allow");
+					this.OnallowChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trash", DbType="Bit NOT NULL")]
+		public bool trash
+		{
+			get
+			{
+				return this._trash;
+			}
+			set
+			{
+				if ((this._trash != value))
+				{
+					this.OntrashChanging(value);
+					this.SendPropertyChanging();
+					this._trash = value;
+					this.SendPropertyChanged("trash");
+					this.OntrashChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_created", DbType="DateTime NOT NULL")]
+		public System.DateTime created
+		{
+			get
+			{
+				return this._created;
+			}
+			set
+			{
+				if ((this._created != value))
+				{
+					this.OncreatedChanging(value);
+					this.SendPropertyChanging();
+					this._created = value;
+					this.SendPropertyChanged("created");
+					this.OncreatedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_modified", DbType="DateTime")]
+		public System.Nullable<System.DateTime> modified
+		{
+			get
+			{
+				return this._modified;
+			}
+			set
+			{
+				if ((this._modified != value))
+				{
+					this.OnmodifiedChanging(value);
+					this.SendPropertyChanging();
+					this._modified = value;
+					this.SendPropertyChanged("modified");
+					this.OnmodifiedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="permission_staff_permission", Storage="_permission", ThisKey="permission_id", OtherKey="id", IsForeignKey=true)]
+		public permission permission
+		{
+			get
+			{
+				return this._permission.Entity;
+			}
+			set
+			{
+				permission previousValue = this._permission.Entity;
+				if (((previousValue != value) 
+							|| (this._permission.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._permission.Entity = null;
+						previousValue.staff_permissions.Remove(this);
+					}
+					this._permission.Entity = value;
+					if ((value != null))
+					{
+						value.staff_permissions.Add(this);
+						this._permission_id = value.id;
+					}
+					else
+					{
+						this._permission_id = default(string);
+					}
+					this.SendPropertyChanged("permission");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="staff_staff_permission", Storage="_staff", ThisKey="staff_id", OtherKey="id", IsForeignKey=true)]
+		public staff staff
+		{
+			get
+			{
+				return this._staff.Entity;
+			}
+			set
+			{
+				staff previousValue = this._staff.Entity;
+				if (((previousValue != value) 
+							|| (this._staff.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._staff.Entity = null;
+						previousValue.staff_permissions.Remove(this);
+					}
+					this._staff.Entity = value;
+					if ((value != null))
+					{
+						value.staff_permissions.Add(this);
+						this._staff_id = value.id;
+					}
+					else
+					{
+						this._staff_id = default(string);
+					}
+					this.SendPropertyChanged("staff");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

@@ -30,6 +30,7 @@ namespace GUI.HangHoa.KhoHang
         void FrmThemDanhMuc_Load(object sender, EventArgs e)
         {
             lkDanhMucCha.Properties.DataSource = busDanhMuc.GetAll();
+            txtMaDanhMuc.Text = busDanhMuc.getMa();
         }
 
         void btnLuu_Click(object sender, EventArgs e)

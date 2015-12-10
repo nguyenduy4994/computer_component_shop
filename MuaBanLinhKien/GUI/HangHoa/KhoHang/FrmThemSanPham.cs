@@ -31,6 +31,7 @@ namespace GUI.HangHoa.KhoHang
         private void FrmThemSanPham_Load(object sender, EventArgs e)
         {
             lkDanhMucSP.Properties.DataSource = busDanhMuc.GetAll();
+            txtMaSanPham.Text = busDanhMuc.getMa();
         }
         public void CheckLoi(String pTen)
         {

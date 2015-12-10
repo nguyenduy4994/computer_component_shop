@@ -19,6 +19,14 @@ namespace BUS
             return Instance;
         }
 
+        public string getMa()
+        {
+            string ma = "NV" + DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00")
+            + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00");
+            return ma;
+
+        }
+
         public object GetAll()
         {
             try
@@ -63,6 +71,20 @@ namespace BUS
             try
             {
                 db.staffs.InsertOnSubmit(nv);
+
+                var permissions = from p in db.permissions
+                                 select p;
+                foreach (permission p in permissions)
+                {
+                    staff_permission sp = new staff_permission();
+                    sp.permission = p;
+                    sp.staff = nv;
+                    sp.created = DateTime.Now;
+                    sp.allow = false;
+
+                    db.staff_permissions.InsertOnSubmit(sp);
+                }
+
                 db.SubmitChanges();
                 return true;
             }

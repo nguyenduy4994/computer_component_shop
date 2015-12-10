@@ -31,6 +31,23 @@ namespace BUS
                 throw ex;
             }
         }
+
+        public string getMaHD()
+        {
+            string ma = "HD" + DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00")
+            + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00");
+            return ma;
+
+        }
+
+        public string getMaBG()
+        {
+            string ma = "BG" + DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00")
+            + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00");
+            return ma;
+
+        }
+
         public object GetAllPrice()
         {
             try
@@ -54,7 +71,8 @@ namespace BUS
             }
             catch(Exception ex)
             {
-                throw ex;
+                //throw ex;
+                return false;
             }
         }
         public bool Insert(bill pbill)
@@ -68,6 +86,7 @@ namespace BUS
             catch(Exception ex)
             {
                 throw ex;
+                //return false;
             }
         }
         public bool Update(bill pbill)

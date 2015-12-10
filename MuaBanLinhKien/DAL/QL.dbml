@@ -89,19 +89,6 @@
       <Association Name="staff_receipt" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.staff_permission" Member="staff_permissions">
-    <Type Name="staff_permission">
-      <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="staff_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="permission_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="allow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="permission_staff_permission" Member="permission" ThisKey="permission_id" OtherKey="id" Type="permission" IsForeignKey="true" />
-      <Association Name="staff_staff_permission" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.warranty" Member="warranties">
     <Type Name="warranty">
       <Column Name="id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -129,8 +116,8 @@
       <Column Name="administrator" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
       <Association Name="staff_receipt" Member="receipts" ThisKey="id" OtherKey="staff_id" Type="receipt" />
-      <Association Name="staff_staff_permission" Member="staff_permissions" ThisKey="id" OtherKey="staff_id" Type="staff_permission" />
       <Association Name="staff_bill" Member="bills" ThisKey="id" OtherKey="staff_id" Type="bill" />
+      <Association Name="staff_staff_permission" Member="staff_permissions" ThisKey="id" OtherKey="staff_id" Type="staff_permission" />
     </Type>
   </Table>
   <Table Name="dbo.category" Member="categories">
@@ -195,6 +182,18 @@
       <Association Name="bill_bill_detail" Member="bill_details" ThisKey="id" OtherKey="bill_id" Type="bill_detail" />
       <Association Name="customer_bill" Member="customer" ThisKey="customer_id" OtherKey="id" Type="customer" IsForeignKey="true" />
       <Association Name="staff_bill" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.staff_permission" Member="staff_permissions">
+    <Type Name="staff_permission">
+      <Column Name="staff_id" Type="System.String" DbType="NVarChar(25) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="permission_id" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="allow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="trash" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="created" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="modified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="permission_staff_permission" Member="permission" ThisKey="permission_id" OtherKey="id" Type="permission" IsForeignKey="true" />
+      <Association Name="staff_staff_permission" Member="staff" ThisKey="staff_id" OtherKey="id" Type="staff" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

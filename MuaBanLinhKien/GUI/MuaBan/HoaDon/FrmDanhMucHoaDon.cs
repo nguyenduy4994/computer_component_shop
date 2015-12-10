@@ -57,6 +57,7 @@ namespace GUI.MuaBan.HoaDon
         {
             panelControl4.Enabled = true;
             dpNgayLap.Focus();
+            txtMaHoaDon.Text = busHoaDon.getMaHD();
            // btnDanhMucThem.Enabled = false;
         }
 
@@ -96,7 +97,7 @@ namespace GUI.MuaBan.HoaDon
         }
         private void btnThemTrai_Click(object sender, EventArgs e)
         {
-            btnLuuCT.Enabled = true;
+            //btnLuuCT.Enabled = true;
             if (gvSanPham.SelectedRowsCount == 0) return;
             product p = (product)gvSanPham.GetFocusedRow();
             if(busHoaDon.KiemTraTonTai(b, p))
@@ -111,6 +112,7 @@ namespace GUI.MuaBan.HoaDon
             bd.monetized = (int)(spSoLuong.Value * p.price);
             bd.product = p;
             bd.bill = b;
+            b.bill_details.Add(bd);
             dgvChiTietHoaDon.DataSource = busHoaDon.GetProduct(b);
         }
 
@@ -129,7 +131,7 @@ namespace GUI.MuaBan.HoaDon
             txtMaHoaDon.Text = txtTongTien.Text = txtThue.Text = txtThanhToan.Text = null;
             dpNgayLap.EditValue = DateTime.Now;
             lkKhachHang.EditValue = lkNhanVien.EditValue = null;
-            panelControl4.Enabled = false;
+           // panelControl4.Enabled = false;
         }
         public void CheckLoi(String pTen)
         {
@@ -161,8 +163,8 @@ namespace GUI.MuaBan.HoaDon
             staff s = (staff)lkNhanVien.GetSelectedDataRow();
             bl.customer_id = c.id;
             bl.staff_id = s.id;
-            bl.customer = c;
-            bl.staff = s;
+            //bl.customer = c;
+            //bl.staff = s;
 
             if (busHoaDon.Insert(bl))
             {
@@ -186,6 +188,20 @@ namespace GUI.MuaBan.HoaDon
                 XtraMessageBox.Show("Lưu thành công", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
                 dgvChiTietHoaDon.DataSource = busHoaDon.GetProduct(b);
             }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            double TongTien = 0;
+            double ThanhTien = 0;
+            for(int i = 0; i < gvChiTietHoaDon.RowCount; i++)
+            {
+                bill_detail pp = (bill_detail)gvChiTietHoaDon.GetRow(i);
+                TongTien += pp.monetized;
+            }
+            ThanhTien = TongTien + TongTien * 0.1;
+            txtTongTien.Text = TongTien.ToString();
+            txtThanhToan.Text = ThanhTien.ToString();
         }
     }
 }

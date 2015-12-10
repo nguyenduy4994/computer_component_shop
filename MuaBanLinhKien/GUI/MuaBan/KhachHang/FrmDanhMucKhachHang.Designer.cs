@@ -160,6 +160,7 @@
             // 
             this.txtMaKhachHang.Location = new System.Drawing.Point(101, 51);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Properties.ReadOnly = true;
             this.txtMaKhachHang.Size = new System.Drawing.Size(195, 20);
             this.txtMaKhachHang.TabIndex = 7;
             // 

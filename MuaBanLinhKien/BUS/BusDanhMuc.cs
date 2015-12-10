@@ -32,6 +32,14 @@ namespace BUS
             }
         }
 
+        public string getMa()
+        {
+            string ma = "DM" + DateTime.Now.Year.ToString("0000") + DateTime.Now.Month.ToString("00") + DateTime.Now.Day.ToString("00")
+            + DateTime.Now.Hour.ToString("00") + DateTime.Now.Minute.ToString("00") + DateTime.Now.Second.ToString("00");
+            return ma;
+           
+        }
+
         public void Insert(category pCat)
         {
             try

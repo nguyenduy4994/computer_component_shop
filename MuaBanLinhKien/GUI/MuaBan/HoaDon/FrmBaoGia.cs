@@ -62,6 +62,7 @@ namespace GUI.MuaBan.HoaDon
             panelControl4.Enabled = true;
             dpNgayLap.Focus();
             btnDanhMucThem.Enabled = false;
+            txtMaHoaDon.Text = busHoaDon.getMaBG();
         }
 
         private void btnDanhMucSua_Click(object sender, EventArgs e)
@@ -176,6 +177,20 @@ namespace GUI.MuaBan.HoaDon
             {
                 XtraMessageBox.Show("Lưu thất bại", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
             }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            double TongTien = 0;
+            double ThanhTien = 0;
+            for (int i = 0; i < gvCTPhieuBaoGia.RowCount; i++)
+            {
+                bill_detail pp = (bill_detail)gvCTPhieuBaoGia.GetRow(i);
+                TongTien += pp.monetized;
+            }
+            ThanhTien = TongTien + TongTien * 0.1;
+            txtTongTien.Text = TongTien.ToString();
+            txtThanhToan.Text = ThanhTien.ToString();
         }
 
     }
