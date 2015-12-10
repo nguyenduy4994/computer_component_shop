@@ -154,15 +154,11 @@
     <Compile Include="HangHoa\NhapHang\FrmDanhMuc.Designer.cs">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\CauHinh\FrmCauHinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="HeThong\CauHinh\FrmCauHinh.cs" />
     <Compile Include="HeThong\CauHinh\FrmCauHinh.Designer.cs">
       <DependentUpon>FrmCauHinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="HeThong\CauHinh\FrmDangNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="HeThong\CauHinh\FrmDangNhap.cs" />
     <Compile Include="HeThong\CauHinh\FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
@@ -197,9 +193,7 @@
     <Compile Include="NhanVien\FrmNhanVien_DanhSach.Designer.cs">
       <DependentUpon>FrmNhanVien_DanhSach.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\FrmThemNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="NhanVien\FrmThemNhanVien.cs" />
     <Compile Include="NhanVien\FrmThemNhanVien.Designer.cs">
       <DependentUpon>FrmThemNhanVien.cs</DependentUpon>
     </Compile>
@@ -288,6 +282,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\DataSources\DAL.category.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
