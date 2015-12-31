@@ -10,7 +10,7 @@ namespace BUS
     public class BusNhanVien
     {
         QLDataContext db = QLDataContext.GetInstance();
-
+        //ếgsdgdfgbdfgdfgdffgdfbh
         static BusNhanVien Instance;
         public static BusNhanVien GetInstance()
         {
